@@ -1,0 +1,22 @@
+{
+  "name": "neto-api-node",
+  "version": "1.0.0",
+  "description": "A Node.js wrapper for the Neto API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-downs/neto-api-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-downs/neto-api-node/issues"
+  },
+  "homepage": "https://github.com/matt-downs/neto-api-node#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
