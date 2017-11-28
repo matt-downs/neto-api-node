@@ -3,8 +3,8 @@ A Node.js wrapper for the Neto API.
 
 This is the dream: 
 ```javascript
-api.getProducts()
-    .where({
+api.getProducts
+    .filter({
         SKU: 'smp_1'
     })
     .output(['Model', 'DefaultPrice'])
@@ -18,6 +18,7 @@ api.getProducts()
         console.error(err)
     });
 ```
+(See https://github.com/clarkie/dynogels#query for example syntax)
 
 **This is a work in progress.**
 
