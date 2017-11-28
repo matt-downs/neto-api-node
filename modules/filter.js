@@ -3,6 +3,10 @@ const sharedModule = require('../shared');
 
 class Filter {
     constructor(filter) {
+        return this.filter(filter);
+    }
+
+    filter(filter) {
         this.filterVal = filter;
         return this;
     }
@@ -11,9 +15,12 @@ class Filter {
         this.outputVal = output;
         return this;
     }
+}
 
+
+class ProductFilter extends Filter {
     exec() {
-
+        // TODO pull body out as a class property and have the filter and output functions update the body property 
         let body = {
             Filter: this.filterVal
         };
@@ -25,5 +32,5 @@ class Filter {
 
 
 module.exports = (filter) => {
-    return new Filter(filter)
+    return new ProductFilter(filter)
 };
