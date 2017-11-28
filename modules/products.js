@@ -1,22 +1,17 @@
-const request = require('request');
-const configModule = require('../config');
+const sharedModule = require('../shared');
 
 
-const getProducts = () => {
-    let options = Object.assign({}, configModule.getRequestOptions());
-    options.headers.NETOAPI_ACTION = 'GetItem';
-    options.body = {
-        Filter: {
-            SKU: ['smp_1', 'smp_2'],
-            OutputSelector: ['Name']
-        }
-    };
-
+const getProducts = (filter) => {
     return new Promise((resolve, reject) => {
-        request.post(options, (error, response, body) => {
-            if (body.Ack != 'Success') return reject(body.Messages);
-            resolve(body);
-        });
+        let body = {
+            Filter: {
+                SKU: ['smp_1', 'smp_2'],
+                OutputSelector: ['Name']
+            }
+        };
+        sharedModule.postApi({action: 'GetItem', reqBody: body})
+        .then(resolve)
+        .catch(reject)
     });
 };
 

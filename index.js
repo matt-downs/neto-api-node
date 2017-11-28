@@ -1,14 +1,14 @@
-
-const configModule = require('./config');
+const sharedModule = require('./shared');
 const productModule = require('./modules/products');
 
 
-function Neto(options) {
-    configModule.init(options);
-}
- 
+class Neto {
+    constructor(options) {
+        sharedModule.init(options);
 
-Neto.prototype.getProducts = productModule.getProducts;
+        this.getProducts = productModule.getProducts;
+    }
+}
 
 
 module.exports = Neto;

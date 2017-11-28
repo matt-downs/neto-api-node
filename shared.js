@@ -1,6 +1,6 @@
-// This module handles initialisation and stores the configuration of the API details
-
+const request = require('request');
 let requestOptions;
+
 
 module.exports = {
     init: (config) => {
@@ -19,5 +19,18 @@ module.exports = {
             }
         };
     },
-    getRequestOptions: () => { return requestOptions; }
-}
+    postApi: ({ action, reqBody }) => {
+        let options = Object.assign({}, requestOptions);
+        options.headers.NETOAPI_ACTION = action;
+        options.body = reqBody;
+
+        return new Promise((resolve, reject) => {
+            request.post(options, (error, response, body) => {
+                // Catch any errors 
+                if (body.Ack != 'Success') return reject(body.Messages);
+
+                resolve(body);
+            });
+        });
+    }
+};
