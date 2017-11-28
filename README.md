@@ -1,24 +1,19 @@
 # neto-api-node
 A Node.js wrapper for the Neto API.
 
-This is the dream: 
+This is the goal: 
 ```javascript
-api.getProducts
-    .filter({
-        SKU: 'smp_1'
-    })
+api.getProducts()
+    .filter({ SKU: ['smp_1', 'smp_2'] })
     .output(['Model', 'DefaultPrice'])
     .exec()
     .then((response) => {
-        for (let product of response.Item){
-            console.log(item);
+        for (let product of response.Item) {
+            console.log(product);
         }
     })
-    .catch((err) => {
-        console.error(err)
-    });
+    .catch((err) => console.error(err));
 ```
-(See https://github.com/clarkie/dynogels#query for example syntax)
 
 **This is a work in progress.**
 

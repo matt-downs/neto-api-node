@@ -1,5 +1,4 @@
 const Neto = require('./index');
-
 const credentials = require('./credentials.json');
 
 
@@ -11,9 +10,12 @@ let api = new Neto({
 
 
 api.getProducts()
-    .then((body) => {
-        console.log(body);
+    .filter({ SKU: ['smp_1', 'smp_2'] })
+    .output(['Model', 'DefaultPrice'])
+    .exec()
+    .then((response) => {
+        for (let product of response.Item) {
+            console.log(product);
+        }
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch((err) => console.error(err));

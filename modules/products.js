@@ -1,18 +1,12 @@
 const sharedModule = require('../shared');
+const filterModule = require('./filter');
 
 
-const getProducts = (filter) => {
-    return new Promise((resolve, reject) => {
-        let body = {
-            Filter: {
-                SKU: ['smp_1', 'smp_2'],
-                OutputSelector: ['Name']
-            }
-        };
-        sharedModule.postApi({action: 'GetItem', reqBody: body})
-        .then(resolve)
-        .catch(reject)
-    });
+const getProducts = (body) => {
+    if (body) return sharedModule.postApi({action: 'GetItem', reqBody: body});
+    else return {
+        filter: filterModule
+    };
 };
 
 
