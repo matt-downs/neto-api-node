@@ -13,8 +13,17 @@ let api = new Neto({
     key: 'api-key'
 });
 
-api.getItem()
-    .filter({ SKU: ['smp_1', 'smp_2'] })
+api.item
+    .add({ SKU: 'smp_1' })
+    .add({ SKU: 'smp_2' })
+    .exec()
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((err) => console.error(err));
+
+api.item
+    .get({ SKU: ['smp_1', 'smp_2'] })
     .output(['Model', 'DefaultPrice'])
     .exec()
     .then((response) => {
@@ -23,6 +32,22 @@ api.getItem()
         }
     })
     .catch((err) => console.error(err));
+
+api.item
+    .update({
+        SKU: 'smp_1',
+        Name: 'Testing product 1'
+    })
+    .update({
+        SKU: 'smp_2',
+        Name: 'Testing product 2'
+    })
+    .exec()
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((err) => console.error(err));
+
 ```
 
 
@@ -30,7 +55,7 @@ api.getItem()
 - [ ] Item
     - [ ] `AddItem`
     - [x] `GetItem`
-    - [ ] `UpdateItem`
+    - [x] `UpdateItem`
 - [ ] Customer
     - [ ] `AddCustomer`
     - [ ] `GetCustomer`

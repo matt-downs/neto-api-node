@@ -6,7 +6,7 @@ class Neto {
     constructor(options) {
         sharedModule.init(options);
         
-        this.getProducts = itemModule.getItem;
+        this.item = itemModule;
     }
 }
 

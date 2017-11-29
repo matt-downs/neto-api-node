@@ -9,13 +9,25 @@ let api = new Neto({
 });
 
 
-api.getProducts()
-    .filter({ SKU: ['smp_1', 'smp_2'] })
-    .output(['Model', 'DefaultPrice'])
+// api.item
+//     .get({ SKU: 'smp_1' })
+//     .get({ SKU: 'smp_2' })
+//     .debug()
+//     .output(['Model', 'DefaultPrice'])
+//     .exec()
+//     .then((response) => {
+//         for (let product of response.Item) {
+//             console.log(product);
+//         }
+//     })
+//     .catch((err) => console.error(err));
+
+
+
+api.item
+    .update({ SKU: 'smp_1' })
     .exec()
     .then((response) => {
-        for (let product of response.Item) {
-            console.log(product);
-        }
+        console.log(response);
     })
     .catch((err) => console.error(err));

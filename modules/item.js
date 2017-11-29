@@ -1,15 +1,10 @@
 const sharedModule = require('../shared');
-const filterModule = require('./filter');
-
-
-const getItem = (body) => {
-    if (body) return sharedModule.postApi({action: 'GetItem', reqBody: body});
-    else return {
-        filter: filterModule
-    };
-};
+const getModule = require('./methods/get');
+const updateModule = require('./methods/update');
 
 
 module.exports = {
-    getItem: getItem
+    // add: addItem,
+    get: getModule.item,
+    update: updateModule.item
 };
