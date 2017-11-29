@@ -13,6 +13,7 @@ let api = new Neto({
     key: 'api-key'
 });
 
+// Add item example
 api.item
     // You can pass in an array of items, or chain together multiple seperate item objects
     .add([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
@@ -23,6 +24,7 @@ api.item
     })
     .catch((err) => console.error(err));
 
+// Get item example
 api.item
     .get({ SKU: ['smp_1', 'smp_2'] })
     .output(['Model', 'DefaultPrice'])
@@ -34,6 +36,7 @@ api.item
     })
     .catch((err) => console.error(err));
 
+// Update item example
 api.item
     .update([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
     .update({ SKU: 'smp_3' })
