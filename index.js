@@ -1,12 +1,12 @@
 const sharedModule = require('./shared');
-const productModule = require('./modules/products');
+const itemModule = require('./modules/item');
 
 
 class Neto {
     constructor(options) {
         sharedModule.init(options);
         
-        this.getProducts = productModule.getProducts;
+        this.getProducts = itemModule.getItem;
     }
 }
 

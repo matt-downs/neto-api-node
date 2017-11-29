@@ -13,7 +13,7 @@ let api = new Neto({
     key: 'api-key'
 });
 
-api.getProducts()
+api.getItem()
     .filter({ SKU: ['smp_1', 'smp_2'] })
     .output(['Model', 'DefaultPrice'])
     .exec()
