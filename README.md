@@ -3,7 +3,7 @@ A Node.js wrapper for the Neto API.
 
 **This is a work in progress.**
 
-## getProducts example: 
+## Proposed syntax example: 
 ```javascript
 const Neto = require('./index');
 
@@ -14,8 +14,9 @@ let api = new Neto({
 });
 
 api.item
-    .add({ SKU: 'smp_1' })
-    .add({ SKU: 'smp_2' })
+    // You can pass in an array of items, or chain together multiple seperate item objects
+    .add([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
+    .add({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
         console.log(response);
@@ -34,20 +35,13 @@ api.item
     .catch((err) => console.error(err));
 
 api.item
-    .update({
-        SKU: 'smp_1',
-        Name: 'Testing product 1'
-    })
-    .update({
-        SKU: 'smp_2',
-        Name: 'Testing product 2'
-    })
+    .update([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
+    .update({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
         console.log(response);
     })
     .catch((err) => console.error(err));
-
 ```
 
 
