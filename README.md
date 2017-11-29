@@ -26,9 +26,21 @@ api.getItem()
 ```
 
 
-## Endpoints supported
-- [ ] Products
-    - [x] GetProducts
+## Endpoint actions supported
+- [ ] Item
+    - [ ] `AddItem`
+    - [x] `GetItem`
+    - [ ] `UpdateItem`
+- [ ] Customer
+    - [ ] `AddCustomer`
+    - [ ] `GetCustomer`
+    - [ ] `UpdateCustomer`
+    - [ ] `AddCustomerLog`
+    - [ ] `UpdateCustomerLog`
+- [ ] Order
+    - [ ] `AddOrder`
+    - [ ] `GetOrder`
+    - [ ] `UpdateOrder`
 
 
 ## Potential future features
