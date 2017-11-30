@@ -49,8 +49,8 @@ api.item
 
 
 ## Endpoint actions supported
-- [ ] Item
-    - [ ] `AddItem`
+- [x] Item
+    - [x] `AddItem`
     - [x] `GetItem`
     - [x] `UpdateItem`
 - [ ] Customer
