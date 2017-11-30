@@ -3,30 +3,32 @@ A Node.js wrapper for the Neto API.
 
 **This is a work in progress.**
 
-## Proposed syntax example: 
+## Examples
+### Initialisation
+You will need to initialise the API like so:
 ```javascript
 const Neto = require('./index');
-
-let api = new Neto({
+const api = new Neto({
     url: 'https://mysite.neto.com.au',
     user: 'user',
     key: 'api-key'
 });
-
-// Add item example
+```
+### item
+#### add
+```javascript
 api.item
-    // You can pass in an array of items, or chain together multiple seperate item objects
-    .add([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
     .add({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
         console.log(response);
     })
     .catch((err) => console.error(err));
-
-// Get item example
+```
+#### get
+```javascript
 api.item
-    .get({ SKU: ['smp_1', 'smp_2'] })
+    .get({ SKU: 'smp_1' })
     .output(['Model', 'DefaultPrice'])
     .exec()
     .then((response) => {
@@ -35,14 +37,51 @@ api.item
         }
     })
     .catch((err) => console.error(err));
-
-// Update item example
+```
+#### update
+```javascript
 api.item
-    .update([{ SKU: 'smp_1' }, { SKU: 'smp_2' }])
-    .update({ SKU: 'smp_3' })
+    .update({ SKU: 'smp_3', Name: 'Updated name' })
     .exec()
     .then((response) => {
         console.log(response);
+    })
+    .catch((err) => console.error(err));
+```
+
+### Order
+#### add
+```javascript
+api.order
+    .add({ OrderID: 'DEMO123' })
+    .exec()
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((err) => console.error(err));
+```
+#### get
+```javascript
+api.order
+    .get({ OrderStatus: ['New', 'Pick'] })
+    .output(['OrderID'])
+    .exec()
+    .then((response) => {
+        for (let order of response.Order) {
+            console.log(order);
+        }
+    })
+    .catch((err) => console.error(err));
+```
+#### update
+```javascript
+api.order
+    .update({ OrderID: 'DEMO123' OrderStatus: 'Dispatched'})
+    .exec()
+    .then((response) => {
+        for (let order of response.Order) {
+            console.log(order);
+        }
     })
     .catch((err) => console.error(err));
 ```
