@@ -5,13 +5,13 @@ A Node.js wrapper for the Neto API.
 
 ## Examples
 - item
-    - [.add](#item.add)
-    - [.get](#item.get)
-    - [.update](#item.update)
+    - [add](#itemadd)
+    - [get](#itemget)
+    - [update](#itemupdate)
 - order
-    - [.add](#order.add)
-    - [.get](#order.get)
-    - [.update](#order.update)
+    - [add](#orderadd)
+    - [get](#orderget)
+    - [update](#orderupdate)
     
 ### Initialisation
 You will need to initialise the API like so:
