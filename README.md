@@ -17,15 +17,15 @@ A Node.js wrapper for the Neto API.
 You will need to initialise the API like so:
 ```javascript
 const Neto = require('./index');
-const api = new Neto({
-    url: 'https://mysite.neto.com.au',
+const myAwesomeSite = new Neto({
+    url: 'https://myawesomesite.neto.com.au',
     user: 'user',
     key: 'api-key'
 });
 ```
 ### item.add
 ```javascript
-api.item
+myAwesomeSite.item
     .add({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
@@ -35,7 +35,7 @@ api.item
 ```
 ### item.get
 ```javascript
-api.item
+myAwesomeSite.item
     .get({ SKU: 'smp_1' })
     .output(['Model', 'DefaultPrice'])
     .exec()
@@ -48,7 +48,7 @@ api.item
 ```
 ### item.update
 ```javascript
-api.item
+myAwesomeSite.item
     .update({ SKU: 'smp_3', Name: 'Updated name' })
     .exec()
     .then((response) => {
@@ -58,7 +58,7 @@ api.item
 ```
 ### order.add
 ```javascript
-api.order
+myAwesomeSite.order
     .add({ OrderID: 'DEMO123' })
     .exec()
     .then((response) => {
@@ -68,7 +68,7 @@ api.order
 ```
 ### order.get
 ```javascript
-api.order
+myAwesomeSite.order
     .get({ OrderStatus: ['New', 'Pick'] })
     .output(['OrderID'])
     .exec()
@@ -81,7 +81,7 @@ api.order
 ```
 ### order.update
 ```javascript
-api.order
+myAwesomeSite.order
     .update({ OrderID: 'DEMO123' OrderStatus: 'Dispatched'})
     .exec()
     .then((response) => {
