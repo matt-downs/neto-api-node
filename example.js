@@ -23,9 +23,19 @@ let api = new Neto({
 //     .catch((err) => console.error(err));
 
 
+// api.item
+//     .add([{ SKU: 'test_item1' }, { SKU: 'test_item2' }])
+//     .add({ SKU: 'test_item3' })
+//     .exec()
+//     .then((response) => {
+//         console.log(response);
+//     })
+//     .catch((err) => console.error(err));
 
-api.item
-    .update({ SKU: 'smp_1' })
+
+api.order
+    .get({ OrderStatus: 'New' })
+    .output(['OrderID'])
     .exec()
     .then((response) => {
         console.log(response);

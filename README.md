@@ -59,10 +59,10 @@ api.item
     - [ ] `UpdateCustomer`
     - [ ] `AddCustomerLog`
     - [ ] `UpdateCustomerLog`
-- [ ] Order
-    - [ ] `AddOrder`
-    - [ ] `GetOrder`
-    - [ ] `UpdateOrder`
+- [x] Order
+    - [x] `AddOrder`
+    - [x] `GetOrder`
+    - [x] `UpdateOrder`
 
 
 ## Potential future features

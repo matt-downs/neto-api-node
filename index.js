@@ -1,5 +1,6 @@
 const sharedModule = require('./shared');
 const itemModule = require('./modules/item');
+const orderModule = require('./modules/order');
 
 
 class Neto {
@@ -7,6 +8,7 @@ class Neto {
         sharedModule.init(options);
         
         this.item = itemModule;
+        this.order = orderModule;
     }
 }
 
