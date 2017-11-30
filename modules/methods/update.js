@@ -1,7 +1,4 @@
-const sharedModule = require('../../shared');
-
-
-class Update {
+class UpdateModule {
     constructor(data) {
         this.data = [];
         return this.update(data);
@@ -25,18 +22,4 @@ class Update {
 }
 
 
-class UpdateItem extends Update {
-    exec() {
-        let body = {
-            Item: this.data
-        };
-        return sharedModule.postApi({ action: 'UpdateItem', reqBody: body });
-    }
-}
-
-
-module.exports = {
-    item: (data) => {
-        return new UpdateItem(data);
-    }
-}
+module.exports = UpdateModule;
