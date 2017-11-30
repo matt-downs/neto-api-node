@@ -41,6 +41,6 @@ class GetItem extends Get {
 
 module.exports = {
     item: (filter) => {
-        return new GetItem(filter)
+        return new GetItem(filter);
     }
 }

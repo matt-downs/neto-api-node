@@ -37,6 +37,6 @@ class UpdateItem extends Update {
 
 module.exports = {
     item: (data) => {
-        return new UpdateItem(data)
+        return new UpdateItem(data);
     }
 }
