@@ -4,6 +4,15 @@ A Node.js wrapper for the Neto API.
 **This is a work in progress.**
 
 ## Examples
+- item
+    - [.add](#item.add)
+    - [.get](#item.get)
+    - [.update](#item.update)
+- order
+    - [.add](#order.add)
+    - [.get](#order.get)
+    - [.update](#order.update)
+    
 ### Initialisation
 You will need to initialise the API like so:
 ```javascript
@@ -14,8 +23,7 @@ const api = new Neto({
     key: 'api-key'
 });
 ```
-### item
-#### add
+### item.add
 ```javascript
 api.item
     .add({ SKU: 'smp_3' })
@@ -25,7 +33,7 @@ api.item
     })
     .catch((err) => console.error(err));
 ```
-#### get
+### item.get
 ```javascript
 api.item
     .get({ SKU: 'smp_1' })
@@ -38,7 +46,7 @@ api.item
     })
     .catch((err) => console.error(err));
 ```
-#### update
+### item.update
 ```javascript
 api.item
     .update({ SKU: 'smp_3', Name: 'Updated name' })
@@ -48,9 +56,7 @@ api.item
     })
     .catch((err) => console.error(err));
 ```
-
-### Order
-#### add
+### order.add
 ```javascript
 api.order
     .add({ OrderID: 'DEMO123' })
@@ -60,7 +66,7 @@ api.order
     })
     .catch((err) => console.error(err));
 ```
-#### get
+### order.get
 ```javascript
 api.order
     .get({ OrderStatus: ['New', 'Pick'] })
@@ -73,7 +79,7 @@ api.order
     })
     .catch((err) => console.error(err));
 ```
-#### update
+### order.update
 ```javascript
 api.order
     .update({ OrderID: 'DEMO123' OrderStatus: 'Dispatched'})
