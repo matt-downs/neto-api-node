@@ -99,15 +99,25 @@ myAwesomeSite.order
     - [x] `GetItem`
     - [x] `UpdateItem`
 - [ ] Customer
-    - [ ] `AddCustomer`
-    - [ ] `GetCustomer`
-    - [ ] `UpdateCustomer`
+    - [x] `AddCustomer`
+    - [x] `GetCustomer`
+    - [x] `UpdateCustomer`
     - [ ] `AddCustomerLog`
     - [ ] `UpdateCustomerLog`
 - [x] Order
     - [x] `AddOrder`
     - [x] `GetOrder`
     - [x] `UpdateOrder`
+- [x] Category
+    - [x] `AddCategory`
+    - [x] `GetCategory`
+    - [x] `UpdateCategory`
+- [x] Content
+    - [x] `AddContent`
+    - [x] `GetContent`
+    - [x] `UpdateContent`
+- [x] Cart
+    - [x] `GetCart`
 
 
 ## Potential future features
