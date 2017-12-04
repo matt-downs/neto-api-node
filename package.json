@@ -4,7 +4,7 @@
   "description": "A Node.js wrapper for the Neto API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/matt-downs/neto-api-node#readme",
   "dependencies": {
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "joi": "^13.0.2",
+    "mocha": "^4.0.1"
   }
 }
