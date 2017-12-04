@@ -10,6 +10,7 @@ const voucherModule = require('./modules/voucher');
 const warehouseModule = require('./modules/warehouse');
 const rmaModule = require('./modules/rma');
 const shippingModule = require('./modules/shipping');
+const currencyModule = require('./modules/currency');
 
 
 
@@ -28,6 +29,7 @@ class Neto {
         this.warehouse = warehouseModule;
         this.rma = rmaModule;
         this.shipping = shippingModule;
+        this.currency = currencyModule;
     }
 }
 

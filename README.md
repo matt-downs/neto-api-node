@@ -109,9 +109,9 @@ myAwesomeSite.order
     - [x] `AddContent`
     - [x] `GetContent`
     - [x] `UpdateContent`
-- [ ] Currency
-    - [ ] `GetCurrencySettings`
-    - [ ] `UpdateCurrencySettings`
+- [x] Currency
+    - [x] `GetCurrencySettings`
+    - [x] `UpdateCurrencySettings`
 - [ ] Customer
     - [x] `AddCustomer`
     - [x] `GetCustomer`
