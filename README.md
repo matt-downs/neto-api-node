@@ -126,10 +126,10 @@ myAwesomeSite.order
     - [x] `AddOrder`
     - [x] `GetOrder`
     - [x] `UpdateOrder`
-- [ ] Payment
-    - [ ] `AddPayment`
-    - [ ] `GetPayment`
-    - [ ] `GetPaymentMethods`
+- [x] Payment
+    - [x] `AddPayment`
+    - [x] `GetPayment`
+    - [x] `GetPaymentMethods`
 - [x] RMA
     - [x] `AddRma`
     - [x] `GetRma`
