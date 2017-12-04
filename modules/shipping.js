@@ -1,7 +1,7 @@
 const sharedModule = require('../shared');
 
 
-class GetQuote {
+class GetShippingQuote {
     constructor(data) {
         return this.getQuote(data);
     }
@@ -20,7 +20,7 @@ class GetQuote {
 }
 
 
-class GetMethods {
+class GetShippingMethods {
     constructor() {
         return this;
     }
@@ -33,9 +33,9 @@ class GetMethods {
 
 module.exports = {
     getMethods: () => {
-        return new GetMethods();
+        return new GetShippingMethods();
     },
     getQuote: (data) => {
-        return new GetQuote(data);
+        return new GetShippingQuote(data);
     }
 };
