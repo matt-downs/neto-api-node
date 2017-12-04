@@ -9,7 +9,7 @@ class AddContent extends AddModule {
         let body = {
             Content: this.data
         };
-        return sharedModule.postApi({ action: 'AddContent', reqBody: body });
+        return sharedModule.postApi({ action: 'AddContent', body: body });
     }
 }
 
@@ -24,7 +24,7 @@ class GetContent extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetContent', reqBody: body });
+        return sharedModule.postApi({ action: 'GetContent', body: body });
     }
 }
 
@@ -34,7 +34,7 @@ class UpdateContent extends UpdateModule {
         let body = {
             Content: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateContent', reqBody: body });
+        return sharedModule.postApi({ action: 'UpdateContent', body: body });
     }
 }
 

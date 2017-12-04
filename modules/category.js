@@ -9,7 +9,7 @@ class AddCategory extends AddModule {
         let body = {
             Category: this.data
         };
-        return sharedModule.postApi({ action: 'AddCategory', reqBody: body });
+        return sharedModule.postApi({ action: 'AddCategory', body: body });
     }
 }
 
@@ -24,7 +24,7 @@ class GetCategory extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetCategory', reqBody: body });
+        return sharedModule.postApi({ action: 'GetCategory', body: body });
     }
 }
 
@@ -34,7 +34,7 @@ class UpdateCategory extends UpdateModule {
         let body = {
             Category: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateCategory', reqBody: body });
+        return sharedModule.postApi({ action: 'UpdateCategory', body: body });
     }
 }
 

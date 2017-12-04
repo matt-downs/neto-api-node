@@ -8,7 +8,7 @@ class AddPayment extends AddModule {
         let body = {
             Payment: this.data
         };
-        return sharedModule.postApi({ action: 'AddPayment', reqBody: body });
+        return sharedModule.postApi({ action: 'AddPayment', body: body });
     }
 }
 
@@ -23,7 +23,7 @@ class GetPayment extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetPayment', reqBody: body });
+        return sharedModule.postApi({ action: 'GetPayment', body: body });
     }
 }
 
@@ -34,7 +34,7 @@ class GetPaymentMethods {
     }
 
     exec() {
-        return sharedModule.postApi({ action: 'GetPaymentMethods', reqBody: {} });
+        return sharedModule.postApi({ action: 'GetPaymentMethods', body: {} });
     }
 }
 

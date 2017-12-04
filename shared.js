@@ -19,10 +19,10 @@ module.exports = {
             }
         };
     },
-    postApi: ({ action, reqBody }) => {
+    postApi: ({ action, body }) => {
         let options = Object.assign({}, requestOptions);
         options.headers.NETOAPI_ACTION = action;
-        options.body = reqBody;
+        options.body = body;
 
         return new Promise((resolve, reject) => {
             request.post(options, (error, response, body) => {

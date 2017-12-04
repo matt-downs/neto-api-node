@@ -9,7 +9,7 @@ class AddRma extends AddModule {
         let body = {
             Rma: this.data
         };
-        return sharedModule.postApi({ action: 'AddRma', reqBody: body });
+        return sharedModule.postApi({ action: 'AddRma', body: body });
     }
 }
 
@@ -24,7 +24,7 @@ class GetRma extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetRma', reqBody: body });
+        return sharedModule.postApi({ action: 'GetRma', body: body });
     }
 }
 

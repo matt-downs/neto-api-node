@@ -15,7 +15,7 @@ class GetShippingQuote {
             ShippingQuote: this.data
         };
 
-        return sharedModule.postApi({ action: 'GetShippingQuote', reqBody: body });
+        return sharedModule.postApi({ action: 'GetShippingQuote', body: body });
     }
 }
 
@@ -26,7 +26,7 @@ class GetShippingMethods {
     }
 
     exec() {
-        return sharedModule.postApi({ action: 'GetShippingMethods', reqBody: {} });
+        return sharedModule.postApi({ action: 'GetShippingMethods', body: {} });
     }
 }
 

@@ -14,7 +14,7 @@ class GetCart extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetCart', reqBody: body });
+        return sharedModule.postApi({ action: 'GetCart', body: body });
     }
 }
 

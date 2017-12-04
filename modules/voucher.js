@@ -9,7 +9,7 @@ class AddVoucher extends AddModule {
         let body = {
             Voucher: this.data
         };
-        return sharedModule.postApi({ action: 'AddVoucher', reqBody: body });
+        return sharedModule.postApi({ action: 'AddVoucher', body: body });
     }
 }
 
@@ -24,7 +24,7 @@ class GetVoucher extends GetModule {
         };
         body.Filter.OutputSelector = this.outputVal;
 
-        return sharedModule.postApi({ action: 'GetVoucher', reqBody: body });
+        return sharedModule.postApi({ action: 'GetVoucher', body: body });
     }
 }
 
@@ -34,7 +34,7 @@ class UpdateVoucher extends UpdateModule {
         let body = {
             Voucher: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateVoucher', reqBody: body });
+        return sharedModule.postApi({ action: 'UpdateVoucher', body: body });
     }
 }
 
