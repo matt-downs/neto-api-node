@@ -154,7 +154,7 @@ myAwesomeSite.order
 - [ ] JOI validation
     - [ ] Validate values passed into .filter() and .output()
     - [ ] Create global config to enable/disable JOI
-- [ ] Add to the ![ProgrammableWeb Neto API SDK page](https://www.programmableweb.com/api/neto/sdks)
+- [ ] Add to the [ProgrammableWeb Neto API SDK page](https://www.programmableweb.com/api/neto/sdks)
 
 API documentation available at:
 http://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/
