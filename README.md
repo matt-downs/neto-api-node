@@ -3,6 +3,58 @@ A Node.js wrapper for the Neto API.
 
 **This is a work in progress.**
 
+## Supported methods
+### .cart 
+- .get() `GetCart`
+### .category
+- .add() `AddCategory`
+- .get() `GetCategory`
+- .update() `UpdateCategory`
+### .content
+- .add() `AddContent`
+- .get() `GetContent`
+- .update() `UpdateContent`
+### .currency
+- .getSettings() `GetCurrencySettings`
+- .updateSettings() `UpdateCurrencySettings`
+### .customer
+- .add() `AddCustomer`
+- .get() `GetCustomer`
+- .update() `UpdateCustomer`
+- .addLog() `AddCustomerLog`
+- .updateLog() `UpdateCustomerLog`
+### .item
+- .add() `AddItem`
+- .get() `GetItem`
+- .update() `UpdateItem`
+### .order
+- .add() `AddOrder`
+- .get() `GetOrder`
+- .update() `UpdateOrder`
+### .payment
+- .add() `AddPayment`
+- .get() `GetPayment`
+- .getMethods() `GetPaymentMethods`
+### .rma
+- .add() `AddRma`
+- .get() `GetRma`
+### .shipping
+- .getMethods() `GetShippingMethods`
+- .getQuote() `GetShippingQuote`
+### .supplier
+- .get() `GetSupplier`
+- .update() `UpdateSupplier`
+- .add() `AddSupplier`
+### .voucher
+- .update() `UpdateVoucher`
+- .add() `AddVoucher`
+- .get() `GetVoucher`
+### .warehouse
+- .add() `AddWarehouse`
+- .update() `UpdateWarehouse`
+- .get() `GetWarehouse`
+
+
 ## Examples
 - item
     - [add](#itemadd)
