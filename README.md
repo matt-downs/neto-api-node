@@ -116,8 +116,8 @@ myAwesomeSite.order
     - [x] `AddCustomer`
     - [x] `GetCustomer`
     - [x] `UpdateCustomer`
-    - [ ] `AddCustomerLog`
-    - [ ] `UpdateCustomerLog`
+    - [x] `AddCustomerLog`
+    - [x] `UpdateCustomerLog`
 - [x] Item
     - [x] `AddItem`
     - [x] `GetItem`

@@ -39,6 +39,50 @@ class UpdateCustomer extends UpdateModule {
 }
 
 
+class AddCustomerLog {
+    constructor(data) {
+        this.addModule = new AddModule(data)
+        return this;
+    }
+
+    addLog(data) {
+        this.addModule.add(data);
+        return this;
+    }
+
+    exec() {
+        let body = {
+            CustomerLogs: {
+                CustomerLog: this.addModule.data
+            }
+        };
+        return sharedModule.postApi({ action: 'AddCustomerLog', reqBody: body });
+    }
+}
+
+
+class UpdateCustomerLog {
+    constructor(data) {
+        this.updateModule = new UpdateModule(data)
+        return this;
+    }
+
+    updateLog(data) {
+        this.updateModule.update(data);
+        return this;
+    }
+
+    exec() {
+        let body = {
+            CustomerLogs: {
+                CustomerLog: this.updateModule.data
+            }
+        };
+        return sharedModule.postApi({ action: 'UpdateCustomerLog', reqBody: body });
+    }
+}
+
+
 module.exports = {
     add: (data) => {
         return new AddCustomer(data);
@@ -48,5 +92,11 @@ module.exports = {
     },
     update: (data) => {
         return new UpdateCustomer(data);
+    },
+    addLog: (data) => {
+        return new AddCustomerLog(data);
+    },
+    updateLog: (data) => {
+        return new UpdateCustomerLog(data);
     }
 };
