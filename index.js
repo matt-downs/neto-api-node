@@ -6,6 +6,11 @@ const categoryModule = require('./modules/category');
 const contentModule = require('./modules/content');
 const cartModule = require('./modules/cart');
 const supplierModule = require('./modules/supplier');
+const voucherModule = require('./modules/voucher');
+const warehouseModule = require('./modules/warehouse');
+const rmaModule = require('./modules/rma');
+const shippingModule = require('./modules/shipping');
+
 
 
 class Neto {
@@ -19,6 +24,10 @@ class Neto {
         this.content = contentModule;
         this.cart = cartModule;
         this.supplier = supplierModule;
+        this.voucher = voucherModule;
+        this.warehouse = warehouseModule;
+        this.rma = rmaModule;
+        this.shipping = shippingModule;
     }
 }
 

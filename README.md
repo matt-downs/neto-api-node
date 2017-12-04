@@ -130,24 +130,24 @@ myAwesomeSite.order
     - [ ] `AddPayment`
     - [ ] `GetPayment`
     - [ ] `GetPaymentMethods`
-- [ ] RMA
-    - [ ] `AddRma`
-    - [ ] `GetRma`
-- [ ] Shipping
-    - [ ] `GetShippingMethods`
-    - [ ] `GetShippingQuote`
+- [x] RMA
+    - [x] `AddRma`
+    - [x] `GetRma`
+- [x] Shipping
+    - [x] `GetShippingMethods`
+    - [x] `GetShippingQuote`
 - [x] Supplier
     - [x] `GetSupplier`
     - [x] `UpdateSupplier`
     - [x] `AddSupplier`
-- [ ] Voucher
-    - [ ] `UpdateVoucher`
-    - [ ] `AddVoucher`
-    - [ ] `GetVoucher`
-- [ ] Warehouse
-    - [ ] `AddWarehouse`
-    - [ ] `UpdateWarehouse`
-    - [ ] `GetWarehouse`
+- [x] Voucher
+    - [x] `UpdateVoucher`
+    - [x] `AddVoucher`
+    - [x] `GetVoucher`
+- [x] Warehouse
+    - [x] `AddWarehouse`
+    - [x] `UpdateWarehouse`
+    - [x] `GetWarehouse`
 
 
 ## Potential future steps
