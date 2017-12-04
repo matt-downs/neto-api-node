@@ -136,10 +136,10 @@ myAwesomeSite.order
 - [ ] Shipping
     - [ ] `GetShippingMethods`
     - [ ] `GetShippingQuote`
-- [ ] Supplier
-    - [ ] `GetSupplier`
-    - [ ] `UpdateSupplier`
-    - [ ] `AddSupplier`
+- [x] Supplier
+    - [x] `GetSupplier`
+    - [x] `UpdateSupplier`
+    - [x] `AddSupplier`
 - [ ] Voucher
     - [ ] `UpdateVoucher`
     - [ ] `AddVoucher`

@@ -5,6 +5,7 @@ const customerModule = require('./modules/customer');
 const categoryModule = require('./modules/category');
 const contentModule = require('./modules/content');
 const cartModule = require('./modules/cart');
+const supplierModule = require('./modules/supplier');
 
 
 class Neto {
@@ -17,6 +18,7 @@ class Neto {
         this.category = categoryModule;
         this.content = contentModule;
         this.cart = cartModule;
+        this.supplier = supplierModule;
     }
 }
 
