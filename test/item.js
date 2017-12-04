@@ -5,15 +5,15 @@ const Joi = require('Joi');
 describe('item', function() {
 
     it('should contain a .add() function', function() {
-        Joi.assert(this.api.item.add, Joi.func());
+        Joi.assert(this.api.item.add, Joi.func().required());
     });
 
     it('should contain a .get() function', function() {
-        Joi.assert(this.api.item.get, Joi.func());
+        Joi.assert(this.api.item.get, Joi.func().required());
     });
 
     it('should contain a .update() function', function() {
-        Joi.assert(this.api.item.update, Joi.func());
+        Joi.assert(this.api.item.update, Joi.func().required());
     });
 
     describe('.add()', function() {
@@ -27,12 +27,13 @@ describe('item', function() {
             });
 
             it('should contain the correct API action', function() {
-                Joi.assert(this.data.action, 'AddItem');
+                let schema = Joi.string().valid('AddItem').required();
+                Joi.assert(this.data.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array()
+                    Item: Joi.array().required()
                 };
                 Joi.assert(this.data.body, schema);
             });
@@ -56,20 +57,18 @@ describe('item', function() {
             });
 
             it('should contain the correct API action', function() {
-                Joi.assert(this.data.action, 'GetItem');
+                let schema = Joi.string().valid('GetItem').required();
+                Joi.assert(this.data.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    action: Joi.string(),
-                    body: {
-                        Filter: {
-                            SKU: Joi.string(),
-                            OutputSelector: Joi.array().required()
-                        }
+                    Filter: {
+                        SKU: Joi.string(),
+                        OutputSelector: Joi.array().required()
                     }
                 };
-                Joi.assert(this.data, schema);
+                Joi.assert(this.data.body, schema);
             });
         });
     });
@@ -85,12 +84,13 @@ describe('item', function() {
             });
 
             it('should contain the correct API action', function() {
-                Joi.assert(this.data.action, 'UpdateItem');
+                let schema = Joi.string().valid('UpdateItem').required();
+                Joi.assert(this.data.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array()
+                    Item: Joi.array().required()
                 };
                 Joi.assert(this.data.body, schema);
             });
