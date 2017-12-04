@@ -94,20 +94,13 @@ myAwesomeSite.order
 
 
 ## Endpoint actions supported
-- [x] Item
-    - [x] `AddItem`
-    - [x] `GetItem`
-    - [x] `UpdateItem`
-- [ ] Customer
-    - [x] `AddCustomer`
-    - [x] `GetCustomer`
-    - [x] `UpdateCustomer`
-    - [ ] `AddCustomerLog`
-    - [ ] `UpdateCustomerLog`
-- [x] Order
-    - [x] `AddOrder`
-    - [x] `GetOrder`
-    - [x] `UpdateOrder`
+- [ ] Accounting
+    - [ ] `UpdateAccountingSystemRelatedAccount`
+    - [ ] `DeleteAccountingSystemRelatedAccount`
+    - [ ] `AddAccountingSystemRelatedAccount`
+    - [ ] `GetAccountingSystemRelatedAccounts`
+- [x] Cart
+    - [x] `GetCart`
 - [x] Category
     - [x] `AddCategory`
     - [x] `GetCategory`
@@ -116,15 +109,52 @@ myAwesomeSite.order
     - [x] `AddContent`
     - [x] `GetContent`
     - [x] `UpdateContent`
-- [x] Cart
-    - [x] `GetCart`
+- [ ] Currency
+    - [ ] `GetCurrencySettings`
+    - [ ] `UpdateCurrencySettings`
+- [ ] Customer
+    - [x] `AddCustomer`
+    - [x] `GetCustomer`
+    - [x] `UpdateCustomer`
+    - [ ] `AddCustomerLog`
+    - [ ] `UpdateCustomerLog`
+- [x] Item
+    - [x] `AddItem`
+    - [x] `GetItem`
+    - [x] `UpdateItem`
+- [x] Order
+    - [x] `AddOrder`
+    - [x] `GetOrder`
+    - [x] `UpdateOrder`
+- [ ] Payment
+    - [ ] `AddPayment`
+    - [ ] `GetPayment`
+    - [ ] `GetPaymentMethods`
+- [ ] RMA
+    - [ ] `AddRma`
+    - [ ] `GetRma`
+- [ ] Shipping
+    - [ ] `GetShippingMethods`
+    - [ ] `GetShippingQuote`
+- [ ] Supplier
+    - [ ] `GetSupplier`
+    - [ ] `UpdateSupplier`
+    - [ ] `AddSupplier`
+- [ ] Voucher
+    - [ ] `UpdateVoucher`
+    - [ ] `AddVoucher`
+    - [ ] `GetVoucher`
+- [ ] Warehouse
+    - [ ] `AddWarehouse`
+    - [ ] `UpdateWarehouse`
+    - [ ] `GetWarehouse`
 
 
-## Potential future features
+## Potential future steps
 - [ ] JOI validation
     - [ ] Validate values passed into .filter() and .output()
     - [ ] Create global config to enable/disable JOI
-
+- [ ] Add to the ![ProgrammableWeb Neto API SDK page](https://www.programmableweb.com/api/neto/sdks)
 
 API documentation available at:
 http://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/
