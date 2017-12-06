@@ -5,13 +5,13 @@ const UpdateModule = require('./methods/update');
 
 
 class AddItem extends AddModule {
-    exec({ debug }) {
+    exec({ debug = false } = {}) {
         let body = {
             Item: this.data
         };
 
         let req = { action: 'AddItem', body: body };
-        
+
         if (debug) return req;
         return sharedModule.postApi(req);
     }
@@ -19,7 +19,7 @@ class AddItem extends AddModule {
 
 
 class GetItem extends GetModule {
-    exec({ debug }) {
+    exec({ debug = false } = {}) {
         // TODO
         // - Add chaining support
         // - Pull body out as a class property and have the filter and output functions update the body property 
@@ -29,7 +29,7 @@ class GetItem extends GetModule {
         body.Filter.OutputSelector = this.outputVal;
 
         let req = { action: 'GetItem', body: body };
-        
+
         if (debug) return req;
         return sharedModule.postApi(req);
     }
@@ -40,13 +40,13 @@ class GetItem extends GetModule {
 
 
 class UpdateItem extends UpdateModule {
-    exec({ debug }) {
+    exec({ debug = false } = {}) {
         let body = {
             Item: this.data
         };
 
         let req = { action: 'UpdateItem', body: body };
-        
+
         if (debug) return req;
         return sharedModule.postApi(req);
     }
