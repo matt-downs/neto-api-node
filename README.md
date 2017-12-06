@@ -76,11 +76,6 @@ const api = new Neto({
 
 
 ## Examples
-- item
-    - [add](#itemadd)
-    - [get](#itemget)
-    - [update](#itemupdate)
-
 ### item.add
 ```javascript
 api.item
@@ -137,7 +132,7 @@ Because this library utilises promises, it fully supports the `async` and `await
 ```javascript
 async function addItem() {
     try {
-        var response = await api.item.add({ SKU: 'smp_1' }).exec()
+        var response = await api.item.add({ SKU: 'smp_1' }).exec();
         console.log(response);
     } catch (e) console.log(e)
 }
