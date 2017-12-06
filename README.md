@@ -1,9 +1,17 @@
 # neto-api-node
-A Node.js wrapper for the Neto API.
+A promise based Neto API client for Node.
 
 **This is a work in progress.**
 
-## Supported methods
+## Basic syntax
+Once the library is initialised, you can use it like so:
+```javascript
+api.[type]     // See below for a list of supported types
+    .[method]() // See below for a list of methods for each type (generally add, get or update)
+    .exec()     // Returns a promise that resolves with the API response in JSON format
+```
+
+## Supported types and methods
 ### .cart 
 - .get() `GetCart`
 ### .category
@@ -55,72 +63,37 @@ A Node.js wrapper for the Neto API.
 - .get() `GetWarehouse`
 
 
-## Examples
-- item
-    - [add](#itemadd)
-    - [get](#itemget)
-    - [update](#itemupdate)
-- order
-    - [add](#orderadd)
-    - [get](#orderget)
-    - [update](#orderupdate)
-    
-### Initialisation
-You will need to initialise the API like so:
+## Initialisation
+Before you start making calls, you will need to initialise the API like so:
 ```javascript
 const Neto = require('./index');
-const myAwesomeSite = new Neto({
+const api = new Neto({
     url: 'https://myawesomesite.neto.com.au',
     user: 'user',
     key: 'api-key'
 });
 ```
+
+
+## Examples
+- item
+    - [add](#itemadd)
+    - [get](#itemget)
+    - [update](#itemupdate)
+
 ### item.add
 ```javascript
-myAwesomeSite.item
+api.item
     .add({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
         console.log(response);
     })
-    .catch((err) => console.error(err));
-```
-### item.get
-```javascript
-myAwesomeSite.item
-    .get({ SKU: 'smp_1' })
-    .output(['Model', 'DefaultPrice'])
-    .exec()
-    .then((response) => {
-        for (let product of response.Item) {
-            console.log(product);
-        }
-    })
-    .catch((err) => console.error(err));
-```
-### item.update
-```javascript
-myAwesomeSite.item
-    .update({ SKU: 'smp_3', Name: 'Updated name' })
-    .exec()
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((err) => console.error(err));
-```
-### order.add
-```javascript
-myAwesomeSite.order
-    .add({ OrderID: 'DEMO123' })
-    .exec()
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((err) => console.error(err));
+    .catch((e) => console.log(e));
 ```
 ### order.get
 ```javascript
-myAwesomeSite.order
+api.order
     .get({ OrderStatus: ['New', 'Pick'] })
     .output(['OrderID'])
     .exec()
@@ -129,20 +102,48 @@ myAwesomeSite.order
             console.log(order);
         }
     })
-    .catch((err) => console.error(err));
+    .catch((e) => console.log(e));
 ```
-### order.update
+### customer.update
 ```javascript
-myAwesomeSite.order
-    .update({ OrderID: 'DEMO123' OrderStatus: 'Dispatched'})
+api.customer
+    .update({ Username: 'someguy', EmailAddress: 'bob@email.com'})
     .exec()
     .then((response) => {
-        for (let order of response.Order) {
-            console.log(order);
-        }
+        console.log(response);
     })
-    .catch((err) => console.error(err));
+    .catch((e) => console.log(e));
 ```
+
+
+## Advanced usage
+### Chaining
+`.add()` and `.update()` methods can be chained together with themselves to improve readability. Check it out below:
+```javascript
+api.item
+    .add({ SKU: 'smp_1' })
+    .add({ SKU: 'smp_2' })
+    .add({ SKU: 'smp_3' })
+    .exec()
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((e) => console.log(e));
+```
+Chaining `.get()` methods will be supported soon.
+
+### async/await support
+Because this library utilises promises, it fully supports the `async` and `await` operators. Here's an example:
+```javascript
+async function addItem() {
+    try {
+        var response = await api.item.add({ SKU: 'smp_1' }).exec()
+        console.log(response);
+    } catch (e) console.log(e)
+}
+addItem();
+```
+It's that easy!
 
 
 ## Endpoint actions supported
