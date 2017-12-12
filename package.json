@@ -1,5 +1,5 @@
 {
-  "name": "neto-api-node",
+  "name": "neto-api",
   "version": "1.0.0",
   "description": "A Node.js wrapper for the Neto API.",
   "main": "index.js",
