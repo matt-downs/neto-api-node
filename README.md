@@ -1,73 +1,15 @@
-# neto-api-node
+# neto-api
 A promise based Neto API client for Node.
 
-**This is a work in progress.**
-
-## Basic syntax
-Once the library is initialised, you can use it like so:
-```javascript
-api.[type]     // See below for a list of supported types
-    .[method]() // See below for a list of methods for each type (generally add, get or update)
-    .exec()     // Returns a promise that resolves with the API response in JSON format
-```
-
-## Supported types and methods
-### .cart 
-- .get() `GetCart`
-### .category
-- .add() `AddCategory`
-- .get() `GetCategory`
-- .update() `UpdateCategory`
-### .content
-- .add() `AddContent`
-- .get() `GetContent`
-- .update() `UpdateContent`
-### .currency
-- .getSettings() `GetCurrencySettings`
-- .updateSettings() `UpdateCurrencySettings`
-### .customer
-- .add() `AddCustomer`
-- .get() `GetCustomer`
-- .update() `UpdateCustomer`
-- .addLog() `AddCustomerLog`
-- .updateLog() `UpdateCustomerLog`
-### .item
-- .add() `AddItem`
-- .get() `GetItem`
-- .update() `UpdateItem`
-### .order
-- .add() `AddOrder`
-- .get() `GetOrder`
-- .update() `UpdateOrder`
-### .payment
-- .add() `AddPayment`
-- .get() `GetPayment`
-- .getMethods() `GetPaymentMethods`
-### .rma
-- .add() `AddRma`
-- .get() `GetRma`
-### .shipping
-- .getMethods() `GetShippingMethods`
-- .getQuote() `GetShippingQuote`
-### .supplier
-- .get() `GetSupplier`
-- .update() `UpdateSupplier`
-- .add() `AddSupplier`
-### .voucher
-- .update() `UpdateVoucher`
-- .add() `AddVoucher`
-- .get() `GetVoucher`
-### .warehouse
-- .add() `AddWarehouse`
-- .update() `UpdateWarehouse`
-- .get() `GetWarehouse`
+### `npm i neto-api`
 
 
 ## Initialisation
 Before you start making calls, you will need to initialise the API like so:
 ```javascript
-const Neto = require('./index');
-const api = new Neto({
+const Neto = require('neto-api');
+
+const mySite = new Neto({
     url: 'https://myawesomesite.neto.com.au',
     user: 'user',
     key: 'api-key'
@@ -75,10 +17,20 @@ const api = new Neto({
 ```
 
 
+## Basic syntax
+Once the library is [initialised](#initialisation), you can use it like so:
+```javascript
+mySite
+    .[type]     // See below for a list of supported types
+    .[method]() // See below for a list of methods for each type (generally add, get or update)
+    .exec()     // Returns a promise that resolves with the API response in JSON format
+```
+
+
 ## Examples
 ### item.add
 ```javascript
-api.item
+mySite.item
     .add({ SKU: 'smp_3' })
     .exec()
     .then((response) => {
@@ -88,7 +40,7 @@ api.item
 ```
 ### order.get
 ```javascript
-api.order
+mySite.order
     .get({ OrderStatus: ['New', 'Pick'] })
     .output(['OrderID'])
     .exec()
@@ -101,7 +53,7 @@ api.order
 ```
 ### customer.update
 ```javascript
-api.customer
+mySite.customer
     .update({ Username: 'someguy', EmailAddress: 'bob@email.com'})
     .exec()
     .then((response) => {
@@ -115,7 +67,7 @@ api.customer
 ### Chaining
 `.add()` and `.update()` methods can be chained together with themselves to improve readability. Check it out below:
 ```javascript
-api.item
+mySite.item
     .add({ SKU: 'smp_1' })
     .add({ SKU: 'smp_2' })
     .add({ SKU: 'smp_3' })
@@ -132,7 +84,7 @@ Because this library utilises promises, it fully supports the `async` and `await
 ```javascript
 async function addItem() {
     try {
-        var response = await api.item.add({ SKU: 'smp_1' }).exec();
+        var response = await mySite.item.add({ SKU: 'smp_1' }).exec();
         console.log(response);
     } catch (e) console.log(e)
 }
@@ -141,8 +93,99 @@ addItem();
 It's that easy!
 
 
+## Supported types and methods
+
+### `.cart`
+Method | Neto API Action
+--- | ---
+`.get( CartFilter )` | `GetCart`
+
+### `.category`
+Method | Neto API Action
+--- | ---
+`.add( Category | Category[] )` | `AddCategory`
+`.get( CategoryFilter )` | `GetCategory`
+`.update( Category | Category[] )` | `UpdateCategory`
+
+### `.content`
+Method | Neto API Action
+--- | ---
+`.add( Content | Content[] )` | `AddContent` 
+`.get( ContentFilter )` | `GetContent` 
+`.update( Content | Content[] )` | `UpdateContent`
+
+### `.currency`
+Method | Neto API Action
+--- | ---
+`.getSettings()` | `GetCurrencySettings` 
+`.updateSettings( CurrencySettings )` | `UpdateCurrencySettings` 
+
+### `.customer`
+Method | Neto API Action
+--- | ---
+`.add( Customer | Customer[] )` | `AddCustomer` 
+`.get( CustomerFilter )` | `GetCustomer` 
+`.update( Customer | Customer[] )` | `UpdateCustomer`
+`.addLog( CustomerLog | CustomerLog[] )` | `AddCustomerLog`
+`.updateLog( CustomerLog | CustomerLog[] )` | `UpdateCustomerLog`
+
+### `.item`
+Method | Neto API Action
+--- | ---
+`.add( Item | Item[] )` | `AddItem` 
+`.get( ItemFilter )` | `GetItem` 
+`.update( Item | Item[] )` | `UpdateItem`
+
+### .order
+Method | Neto API Action
+--- | ---
+`.add( Order | Order[] )` | `AddOrder` 
+`.get( OrderFilter )` | `GetOrder` 
+`.update( Order | Order[] )` | `UpdateOrder`
+
+### .payment
+Method | Neto API Action
+--- | ---
+`.add( Payment | Payment[] )` | `AddPayment` 
+`.get( PaymentFilter )` | `GetPayment` 
+`.getMethods()` | `GetPaymentMethods`
+
+### .rma
+Method | Neto API Action
+--- | ---
+`.add( Rma | Rma[] )` | `AddRma` 
+`.get( RmaFilter )` | `GetRma` 
+
+### .shipping
+Method | Neto API Action
+--- | ---
+`.getMethods()` | `GetShippingMethods` 
+`.getQuote( ShippingQuote )` | `GetShippingQuote` 
+
+### .supplier
+Method | Neto API Action
+--- | ---
+`.add( Supplier | Supplier[] )` | `AddSupplier` 
+`.get( SupplierFilter )` | `GetSupplier` 
+`.update( Supplier | Supplier[] )` | `UpdateSupplier`
+
+### .voucher
+Method | Neto API Action
+--- | ---
+`.add( Voucher | Voucher[] )` | `AddVoucher` 
+`.get( VoucherFilter )` | `GetVoucher` 
+`.update( Voucher | Voucher[] )` | `UpdateVoucher`
+
+### .warehouse
+Method | Neto API Action
+--- | ---
+`.add( Warehouse | Warehouse[] )` | `AddWarehouse` 
+`.get( WarehouseFilter )` | `GetWarehouse` 
+`.update( Warehouse | Warehouse[] )` | `UpdateWarehouse`
+
+
 ## Endpoint actions supported
-- [ ] Accounting
+- [ ] Accounting (TODO)
     - [ ] `UpdateAccountingSystemRelatedAccount`
     - [ ] `DeleteAccountingSystemRelatedAccount`
     - [ ] `AddAccountingSystemRelatedAccount`
@@ -198,12 +241,14 @@ It's that easy!
     - [x] `GetWarehouse`
 
 
-## Potential future steps
-- [ ] JOI validation
-    - [ ] Validate values passed into .filter() and .output()
+## Potential future features
+- [ ] JOI validation before submission
     - [ ] Create global config to enable/disable JOI
 - [ ] Add to the [ProgrammableWeb Neto API SDK page](https://www.programmableweb.com/api/neto/sdks)
 - [ ] TypeScript support
 
-API documentation available at:
-http://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/
+
+Neto API documentation available [here](http://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/).
+
+
+Note: This is currently a personal project of mine and is not offically endorsed or supported by Neto.
