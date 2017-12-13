@@ -1,7 +1,8 @@
 # neto-api
-A promise based Neto API client for Node.
+A promise based Neto API client for Node
 
-### `npm i neto-api`
+
+### `npm install neto-api`
 
 
 ## Initialisation
@@ -18,13 +19,14 @@ const mySite = new Neto({
 
 
 ## Basic syntax
-Once the library is [initialised](#initialisation), you can use it like so:
+Once the library is initialised, you can use it like so:
 ```javascript
 mySite
     .[type]     // See below for a list of supported types
     .[method]() // See below for a list of methods for each type (generally add, get or update)
     .exec()     // Returns a promise that resolves with the API response in JSON format
 ```
+[Supported types and methods](#supported-types-and-methods)
 
 
 ## Examples
@@ -65,7 +67,7 @@ mySite.customer
 
 ## Advanced usage
 ### Chaining
-`.add()` and `.update()` methods can be chained together with themselves to improve readability. Check it out below:
+`.add()` and `.update()` methods can be chained together with themselves to improve readability - the request itself will only be sent when `.exec()` is called. Check it out below:
 ```javascript
 mySite.item
     .add({ SKU: 'smp_1' })
@@ -77,15 +79,34 @@ mySite.item
     })
     .catch((e) => console.log(e));
 ```
-Chaining `.get()` methods will be supported soon.
+This allows you to some other cool stuff, such as building a bulk request to execute some time in the future:
+```javascript
+// Expose a copy of the request type
+var addItems = api.item;
+// Do some stuff...
+addItems = addItems.add({ SKU: 'testing1' });
+// Do some other stuff...
+addItems = addItems.add({ SKU: 'testing2' });
+// Keep building the request...
+addItems = addItems.add({ SKU: 'testing3' });
+
+// Finally execute the request at a later time
+addItems.exec()
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((e) => console.log(e));
+```
+Chaining `.get()` methods will be supported soon, I promise.
 
 ### async/await support
 Because this library utilises promises, it fully supports the `async` and `await` operators. Here's an example:
 ```javascript
 async function addItem() {
     try {
-        var response = await mySite.item.add({ SKU: 'smp_1' }).exec();
-        console.log(response);
+        var response = mySite.item.add({ SKU: 'smp_1' }).exec();
+        // Do some stuff...
+        console.log(await response);
     } catch (e) console.log(e)
 }
 addItem();
