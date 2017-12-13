@@ -1,6 +1,6 @@
 {
   "name": "neto-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A promise based Neto API client for Node",
   "main": "index.js",
   "scripts": {
