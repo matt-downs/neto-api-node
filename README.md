@@ -79,7 +79,7 @@ mySite.item
     })
     .catch((e) => console.log(e));
 ```
-This allows you to some other cool stuff, such as building a bulk request to execute some time in the future:
+This allows you to some other cool stuff, such as building a bulk request to execute at some time in the future:
 ```javascript
 // Expose a copy of the request type
 var addItems = api.item;
@@ -100,7 +100,7 @@ addItems.exec()
 Chaining `.get()` methods will be supported soon, I promise.
 
 ### async/await support
-Because this library utilises promises, it fully supports the `async` and `await` operators. Here's an example:
+Because this library is built on promises, it supports the use of `async` and `await` operators. Here's an example:
 ```javascript
 async function addItem() {
     try {
