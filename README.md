@@ -103,16 +103,16 @@ Method | Neto API Action
 ### `.category`
 Method | Neto API Action
 --- | ---
-`.add( Category | Category[] )` | `AddCategory`
+`.add( Category \| Category[] )` | `AddCategory`
 `.get( CategoryFilter )` | `GetCategory`
-`.update( Category | Category[] )` | `UpdateCategory`
+`.update( Category \| Category[] )` | `UpdateCategory`
 
 ### `.content`
 Method | Neto API Action
 --- | ---
-`.add( Content | Content[] )` | `AddContent` 
+`.add( Content \| Content[] )` | `AddContent` 
 `.get( ContentFilter )` | `GetContent` 
-`.update( Content | Content[] )` | `UpdateContent`
+`.update( Content \| Content[] )` | `UpdateContent`
 
 ### `.currency`
 Method | Neto API Action
@@ -123,37 +123,37 @@ Method | Neto API Action
 ### `.customer`
 Method | Neto API Action
 --- | ---
-`.add( Customer | Customer[] )` | `AddCustomer` 
+`.add( Customer \| Customer[] )` | `AddCustomer` 
 `.get( CustomerFilter )` | `GetCustomer` 
-`.update( Customer | Customer[] )` | `UpdateCustomer`
-`.addLog( CustomerLog | CustomerLog[] )` | `AddCustomerLog`
-`.updateLog( CustomerLog | CustomerLog[] )` | `UpdateCustomerLog`
+`.update( Customer \| Customer[] )` | `UpdateCustomer`
+`.addLog( CustomerLog \| CustomerLog[] )` | `AddCustomerLog`
+`.updateLog( CustomerLog \| CustomerLog[] )` | `UpdateCustomerLog`
 
 ### `.item`
 Method | Neto API Action
 --- | ---
-`.add( Item | Item[] )` | `AddItem` 
+`.add( Item \| Item[] )` | `AddItem` 
 `.get( ItemFilter )` | `GetItem` 
-`.update( Item | Item[] )` | `UpdateItem`
+`.update( Item \| Item[] )` | `UpdateItem`
 
 ### .order
 Method | Neto API Action
 --- | ---
-`.add( Order | Order[] )` | `AddOrder` 
+`.add( Order \| Order[] )` | `AddOrder` 
 `.get( OrderFilter )` | `GetOrder` 
-`.update( Order | Order[] )` | `UpdateOrder`
+`.update( Order \| Order[] )` | `UpdateOrder`
 
 ### .payment
 Method | Neto API Action
 --- | ---
-`.add( Payment | Payment[] )` | `AddPayment` 
+`.add( Payment \| Payment[] )` | `AddPayment` 
 `.get( PaymentFilter )` | `GetPayment` 
 `.getMethods()` | `GetPaymentMethods`
 
 ### .rma
 Method | Neto API Action
 --- | ---
-`.add( Rma | Rma[] )` | `AddRma` 
+`.add( Rma \| Rma[] )` | `AddRma` 
 `.get( RmaFilter )` | `GetRma` 
 
 ### .shipping
@@ -165,23 +165,23 @@ Method | Neto API Action
 ### .supplier
 Method | Neto API Action
 --- | ---
-`.add( Supplier | Supplier[] )` | `AddSupplier` 
+`.add( Supplier \| Supplier[] )` | `AddSupplier` 
 `.get( SupplierFilter )` | `GetSupplier` 
-`.update( Supplier | Supplier[] )` | `UpdateSupplier`
+`.update( Supplier \| Supplier[] )` | `UpdateSupplier`
 
 ### .voucher
 Method | Neto API Action
 --- | ---
-`.add( Voucher | Voucher[] )` | `AddVoucher` 
+`.add( Voucher \| Voucher[] )` | `AddVoucher` 
 `.get( VoucherFilter )` | `GetVoucher` 
-`.update( Voucher | Voucher[] )` | `UpdateVoucher`
+`.update( Voucher \| Voucher[] )` | `UpdateVoucher`
 
 ### .warehouse
 Method | Neto API Action
 --- | ---
-`.add( Warehouse | Warehouse[] )` | `AddWarehouse` 
+`.add( Warehouse \| Warehouse[] )` | `AddWarehouse` 
 `.get( WarehouseFilter )` | `GetWarehouse` 
-`.update( Warehouse | Warehouse[] )` | `UpdateWarehouse`
+`.update( Warehouse \| Warehouse[] )` | `UpdateWarehouse`
 
 
 ## Endpoint actions supported
