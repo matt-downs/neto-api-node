@@ -136,47 +136,47 @@ Method | Neto API Action
 `.get( ItemFilter )` | `GetItem` 
 `.update( Item \| Item[] )` | `UpdateItem`
 
-### .order
+### `.order`
 Method | Neto API Action
 --- | ---
 `.add( Order \| Order[] )` | `AddOrder` 
 `.get( OrderFilter )` | `GetOrder` 
 `.update( Order \| Order[] )` | `UpdateOrder`
 
-### .payment
+### `.payment`
 Method | Neto API Action
 --- | ---
 `.add( Payment \| Payment[] )` | `AddPayment` 
 `.get( PaymentFilter )` | `GetPayment` 
 `.getMethods()` | `GetPaymentMethods`
 
-### .rma
+### `.rma`
 Method | Neto API Action
 --- | ---
 `.add( Rma \| Rma[] )` | `AddRma` 
 `.get( RmaFilter )` | `GetRma` 
 
-### .shipping
+### `.shipping`
 Method | Neto API Action
 --- | ---
 `.getMethods()` | `GetShippingMethods` 
 `.getQuote( ShippingQuote )` | `GetShippingQuote` 
 
-### .supplier
+### `.supplier`
 Method | Neto API Action
 --- | ---
 `.add( Supplier \| Supplier[] )` | `AddSupplier` 
 `.get( SupplierFilter )` | `GetSupplier` 
 `.update( Supplier \| Supplier[] )` | `UpdateSupplier`
 
-### .voucher
+### `.voucher`
 Method | Neto API Action
 --- | ---
 `.add( Voucher \| Voucher[] )` | `AddVoucher` 
 `.get( VoucherFilter )` | `GetVoucher` 
 `.update( Voucher \| Voucher[] )` | `UpdateVoucher`
 
-### .warehouse
+### `.warehouse`
 Method | Neto API Action
 --- | ---
 `.add( Warehouse \| Warehouse[] )` | `AddWarehouse` 
