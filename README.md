@@ -84,11 +84,11 @@ This allows you to some other cool stuff, such as building a bulk request to exe
 // Expose a copy of the request type
 var addItems = api.item;
 // Do some stuff...
-addItems = addItems.add({ SKU: 'testing1' });
+addItems = addItems.add({ SKU: 'smp_1' });
 // Do some other stuff...
-addItems = addItems.add({ SKU: 'testing2' });
+addItems = addItems.add({ SKU: 'smp_2' });
 // Keep building the request...
-addItems = addItems.add({ SKU: 'testing3' });
+addItems = addItems.add({ SKU: 'smp_3' });
 
 // Finally execute the request at a later time
 addItems.exec()
