@@ -2,7 +2,6 @@ const Joi = require('Joi');
 
 
 describe('item', function() {
-
     it('should contain a .add() function', function() {
         Joi.assert(this.api.item.add, Joi.func().required());
     });
@@ -16,6 +15,10 @@ describe('item', function() {
     });
 
     describe('.add()', function() {
+        it('should contain a .exec() function', function() {
+            Joi.assert(this.api.item.add().exec, Joi.func().required());
+        });
+
         describe('request', function() {
             before(function() {
                 this.data = this.api.item
@@ -47,11 +50,44 @@ describe('item', function() {
     });
 
     describe('.get()', function() {
-        describe('request', function() {
+        it('should contain a .output() function', function() {
+            Joi.assert(this.api.item.get().output, Joi.func().required());
+        });
+
+        describe('.output()', function() {
             before(function() {
                 this.data = this.api.item
                     .get({ SKU: 'test' })
-                    .output([])
+                    .output(['test1', 'test2'])
+                    .exec({ debug: true });
+            });
+
+            it('should add the array param to the OutputSelector key',
+                function() {
+                    let schema = {
+                        Filter: {
+                            SKU: Joi.string(),
+                            OutputSelector: Joi.array().items(
+                                Joi.string().valid('test1'),
+                                Joi.string().valid('test2')
+                            ).required()
+                        }
+                    };
+                    Joi.assert(this.data.body, schema);
+                });
+        });
+
+        it('should contain a .exec() function', function() {
+            Joi.assert(this.api.item.get().exec, Joi.func().required());
+        });
+
+        describe('request', function() {
+            before(function() {
+                this.data = this.api.item
+                    .get({
+                        SKU: 'test',
+                        OutputSelector: ['test']
+                    })
                     .exec({ debug: true });
             });
 
@@ -73,6 +109,10 @@ describe('item', function() {
     });
 
     describe('.update()', function() {
+        it('should contain a .exec() function', function() {
+            Joi.assert(this.api.item.update().exec, Joi.func().required());
+        });
+
         describe('request', function() {
             before(function() {
                 this.data = this.api.item
