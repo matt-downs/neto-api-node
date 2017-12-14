@@ -5,7 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Ability to use `.get()` without `.output()`
+- More tests for type `.item`
 ### Changed
+- Filter request body is now built in the `GetModule` parent class each time `.get()` or `.output()` is called
+- API request for `.get(...).exec()` has been moved into the `GetModule` parent class and referenced with `super`
 - Licence to MIT
 
 ## [1.0.1] - 2017-12-13
