@@ -1,5 +1,11 @@
+const sharedModule = require('../../shared');
+
+
 class GetModule {
     constructor(filter) {
+        this.body = {
+            Filter: {}
+        };
         return this.get(filter);
     }
 
@@ -10,13 +16,20 @@ class GetModule {
     }
 
     get(filter) {
-        this.filterVal = filter;
+        this.body.Filter = filter;
         return this;
     }
 
     output(output) {
-        this.outputVal = output;
+        this.body.Filter.OutputSelector = output;
         return this;
+    }
+
+    exec({ debug = false, action }) {
+        let req = { action: action, body: this.body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

@@ -19,24 +19,11 @@ class AddItem extends AddModule {
 
 
 class GetItem extends GetModule {
-    exec({ debug = false } = {}) {
-        // TODO
-        // - Add chaining support
-        // - Pull body out as a class property and have the filter and output functions update the body property 
-        let body = {
-            Filter: this.filterVal
-        };
-        body.Filter.OutputSelector = this.outputVal;
-
-        let req = { action: 'GetItem', body: body };
-
-        if (debug) return req;
-        return sharedModule.postApi(req);
+    exec(params = {}) {
+        params.action = 'GetItem';
+        return super.exec(params);
     }
 }
-
-
-
 
 
 class UpdateItem extends UpdateModule {

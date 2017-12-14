@@ -15,15 +15,7 @@ class AddPayment extends AddModule {
 
 class GetPayment extends GetModule {
     exec() {
-        // TODO
-        // - Add chaining support
-        // - Pull body out as a class property and have the filter and output functions update the body property 
-        let body = {
-            Filter: this.filterVal
-        };
-        body.Filter.OutputSelector = this.outputVal;
-
-        return sharedModule.postApi({ action: 'GetPayment', body: body });
+        return sharedModule.postApi({ action: 'GetPayment', body: this.body });
     }
 }
 
