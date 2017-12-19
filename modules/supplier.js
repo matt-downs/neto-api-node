@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddSupplier extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Supplier: this.data
         };
@@ -23,7 +23,7 @@ class GetSupplier extends GetModule {
 
 
 class UpdateSupplier extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Supplier: this.data
         };

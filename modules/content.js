@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddContent extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Content: this.data
         };
@@ -23,7 +23,7 @@ class GetContent extends GetModule {
 
 
 class UpdateContent extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Content: this.data
         };

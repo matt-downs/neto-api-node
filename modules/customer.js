@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddCustomer extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Customer: this.data
         };
@@ -23,7 +23,7 @@ class GetCustomer extends GetModule {
 
 
 class UpdateCustomer extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Customer: this.data
         };

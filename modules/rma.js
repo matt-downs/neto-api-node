@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddRma extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Rma: this.data
         };

@@ -6,7 +6,7 @@ class GetCurrencySettings {
         return this;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         return sharedModule.postApi({ action: 'GetCurrencySettings', body: {} });
     }
 }
@@ -21,7 +21,7 @@ class UpdateCurrencySettings {
         this.data = data;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             CurrencySettings: this.data
         };

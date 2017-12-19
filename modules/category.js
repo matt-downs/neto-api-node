@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddCategory extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Category: this.data
         };
@@ -23,7 +23,7 @@ class GetCategory extends GetModule {
 
 
 class UpdateCategory extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Category: this.data
         };

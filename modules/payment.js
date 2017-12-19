@@ -4,7 +4,7 @@ const GetModule = require('./methods/get');
 
 
 class AddPayment extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Payment: this.data
         };
@@ -26,7 +26,7 @@ class GetPaymentMethods {
         return this;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         return sharedModule.postApi({ action: 'GetPaymentMethods', body: {} });
     }
 }

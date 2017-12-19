@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddOrder extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Order: this.data
         };
@@ -23,7 +23,7 @@ class GetOrder extends GetModule {
 
 
 class UpdateOrder extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Order: this.data
         };

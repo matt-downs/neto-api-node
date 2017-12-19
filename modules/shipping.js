@@ -10,7 +10,7 @@ class GetShippingQuote {
         this.data = data;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             ShippingQuote: this.data
         };
@@ -25,7 +25,7 @@ class GetShippingMethods {
         return this;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         return sharedModule.postApi({ action: 'GetShippingMethods', body: {} });
     }
 }

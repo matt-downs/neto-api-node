@@ -5,7 +5,7 @@ const UpdateModule = require('./methods/update');
 
 
 class AddWarehouse extends AddModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Warehouse: this.data
         };
@@ -23,7 +23,7 @@ class GetWarehouse extends GetModule {
 
 
 class UpdateWarehouse extends UpdateModule {
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             Warehouse: this.data
         };
