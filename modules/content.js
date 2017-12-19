@@ -15,8 +15,9 @@ class AddContent extends AddModule {
 
 
 class GetContent extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetContent', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetContent';
+        return super.exec(params);
     }
 }
 

@@ -15,8 +15,9 @@ class AddCustomer extends AddModule {
 
 
 class GetCustomer extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetCustomer', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetCustomer';
+        return super.exec(params);
     }
 }
 

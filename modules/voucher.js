@@ -15,8 +15,9 @@ class AddVoucher extends AddModule {
 
 
 class GetVoucher extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetVoucher', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetVoucher';
+        return super.exec(params);
     }
 }
 

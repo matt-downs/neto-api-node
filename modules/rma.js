@@ -15,8 +15,9 @@ class AddRma extends AddModule {
 
 
 class GetRma extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetRma', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetRma';
+        return super.exec(params);
     }
 }
 

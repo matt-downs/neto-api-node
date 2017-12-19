@@ -5,8 +5,9 @@ const UpdateModule = require('./methods/update');
 
 
 class GetCart extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetCart', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetCart';
+        return super.exec(params);
     }
 }
 

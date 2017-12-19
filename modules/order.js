@@ -15,8 +15,9 @@ class AddOrder extends AddModule {
 
 
 class GetOrder extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetOrder', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetOrder';
+        return super.exec(params);
     }
 }
 

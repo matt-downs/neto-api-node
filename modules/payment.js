@@ -14,8 +14,9 @@ class AddPayment extends AddModule {
 
 
 class GetPayment extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetPayment', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetPayment';
+        return super.exec(params);
     }
 }
 

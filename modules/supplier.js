@@ -15,8 +15,9 @@ class AddSupplier extends AddModule {
 
 
 class GetSupplier extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetSupplier', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetSupplier';
+        return super.exec(params);
     }
 }
 

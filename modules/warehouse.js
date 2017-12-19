@@ -15,8 +15,9 @@ class AddWarehouse extends AddModule {
 
 
 class GetWarehouse extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetWarehouse', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetWarehouse';
+        return super.exec(params);
     }
 }
 

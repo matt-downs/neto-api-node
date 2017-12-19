@@ -15,8 +15,9 @@ class AddCategory extends AddModule {
 
 
 class GetCategory extends GetModule {
-    exec() {
-        return sharedModule.postApi({ action: 'GetCategory', body: this.body });
+    exec(params = {}) {
+        params.action = 'GetCategory';
+        return super.exec(params);
     }
 }
 
