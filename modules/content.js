@@ -9,7 +9,11 @@ class AddContent extends AddModule {
         let body = {
             Content: this.data
         };
-        return sharedModule.postApi({ action: 'AddContent', body: body });
+
+        let req = { action: 'AddContent', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateContent extends UpdateModule {
         let body = {
             Content: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateContent', body: body });
+        
+        let req = { action: 'UpdateContent', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

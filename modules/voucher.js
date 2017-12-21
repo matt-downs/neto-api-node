@@ -9,7 +9,11 @@ class AddVoucher extends AddModule {
         let body = {
             Voucher: this.data
         };
-        return sharedModule.postApi({ action: 'AddVoucher', body: body });
+        
+        let req = { action: 'AddVoucher', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateVoucher extends UpdateModule {
         let body = {
             Voucher: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateVoucher', body: body });
+        
+        let req = { action: 'UpdateVoucher', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

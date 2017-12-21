@@ -9,7 +9,11 @@ class AddCategory extends AddModule {
         let body = {
             Category: this.data
         };
-        return sharedModule.postApi({ action: 'AddCategory', body: body });
+
+        let req = { action: 'AddCategory', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateCategory extends UpdateModule {
         let body = {
             Category: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateCategory', body: body });
+        
+        let req = { action: 'UpdateCategory', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

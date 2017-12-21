@@ -9,7 +9,11 @@ class AddSupplier extends AddModule {
         let body = {
             Supplier: this.data
         };
-        return sharedModule.postApi({ action: 'AddSupplier', body: body });
+        
+        let req = { action: 'AddSupplier', body: body };
+        
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateSupplier extends UpdateModule {
         let body = {
             Supplier: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateSupplier', body: body });
+        
+        let req = { action: 'UpdateSupplier', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

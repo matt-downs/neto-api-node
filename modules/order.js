@@ -9,7 +9,11 @@ class AddOrder extends AddModule {
         let body = {
             Order: this.data
         };
-        return sharedModule.postApi({ action: 'AddOrder', body: body });
+
+        let req = { action: 'AddOrder', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateOrder extends UpdateModule {
         let body = {
             Order: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateOrder', body: body });
+        
+        let req = { action: 'UpdateOrder', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

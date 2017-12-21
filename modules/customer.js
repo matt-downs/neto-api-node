@@ -9,7 +9,11 @@ class AddCustomer extends AddModule {
         let body = {
             Customer: this.data
         };
-        return sharedModule.postApi({ action: 'AddCustomer', body: body });
+
+        let req = { action: 'AddCustomer', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateCustomer extends UpdateModule {
         let body = {
             Customer: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateCustomer', body: body });
+        
+        let req = { action: 'UpdateCustomer', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -49,7 +57,11 @@ class AddCustomerLog {
                 CustomerLog: this.addModule.data
             }
         };
-        return sharedModule.postApi({ action: 'AddCustomerLog', body: body });
+
+        let req = { action: 'AddCustomerLog', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -71,7 +83,11 @@ class UpdateCustomerLog {
                 CustomerLog: this.updateModule.data
             }
         };
-        return sharedModule.postApi({ action: 'UpdateCustomerLog', body: body });
+        
+        let req = { action: 'UpdateCustomerLog', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

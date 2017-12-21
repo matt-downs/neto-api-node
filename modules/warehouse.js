@@ -9,7 +9,11 @@ class AddWarehouse extends AddModule {
         let body = {
             Warehouse: this.data
         };
-        return sharedModule.postApi({ action: 'AddWarehouse', body: body });
+        
+        let req = { action: 'AddWarehouse', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
@@ -27,7 +31,11 @@ class UpdateWarehouse extends UpdateModule {
         let body = {
             Warehouse: this.data
         };
-        return sharedModule.postApi({ action: 'UpdateWarehouse', body: body });
+        
+        let req = { action: 'UpdateWarehouse', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 

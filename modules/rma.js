@@ -9,7 +9,11 @@ class AddRma extends AddModule {
         let body = {
             Rma: this.data
         };
-        return sharedModule.postApi({ action: 'AddRma', body: body });
+        
+        let req = { action: 'AddRma', body: body };
+
+        if (debug) return req;
+        return sharedModule.postApi(req);
     }
 }
 
