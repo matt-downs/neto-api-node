@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Ability to use `.get()` without `.output()`
 - More tests for type `.item`
+- Debug param to all `.exec()` methods
 ### Changed
 - Filter request body is now built in the `GetModule` parent class each time `.get()` or `.output()` is called
 - API request for all `.get()` methods with filters has been moved into the `GetModule` parent class and referenced with `super`
