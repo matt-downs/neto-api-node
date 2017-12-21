@@ -6,10 +6,7 @@ const UpdateModule = require('./methods/update');
 
 class AddOrder extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Order: this.data
-        };
-
+        let body = { Order: this.data };
         let req = { action: 'AddOrder', body: body };
 
         if (debug) return req;
@@ -28,10 +25,7 @@ class GetOrder extends GetModule {
 
 class UpdateOrder extends UpdateModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Order: this.data
-        };
-        
+        let body = { Order: this.data };
         let req = { action: 'UpdateOrder', body: body };
 
         if (debug) return req;

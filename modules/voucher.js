@@ -6,10 +6,7 @@ const UpdateModule = require('./methods/update');
 
 class AddVoucher extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Voucher: this.data
-        };
-        
+        let body = { Voucher: this.data };
         let req = { action: 'AddVoucher', body: body };
 
         if (debug) return req;
@@ -28,10 +25,7 @@ class GetVoucher extends GetModule {
 
 class UpdateVoucher extends UpdateModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Voucher: this.data
-        };
-        
+        let body = { Voucher: this.data };
         let req = { action: 'UpdateVoucher', body: body };
 
         if (debug) return req;

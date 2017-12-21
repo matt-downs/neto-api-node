@@ -6,10 +6,7 @@ const UpdateModule = require('./methods/update');
 
 class AddItem extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Item: this.data
-        };
-
+        let body = { Item: this.data };
         let req = { action: 'AddItem', body: body };
 
         if (debug) return req;
@@ -28,10 +25,7 @@ class GetItem extends GetModule {
 
 class UpdateItem extends UpdateModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Item: this.data
-        };
-
+        let body = { Item: this.data };
         let req = { action: 'UpdateItem', body: body };
 
         if (debug) return req;

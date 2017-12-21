@@ -6,10 +6,7 @@ const UpdateModule = require('./methods/update');
 
 class AddWarehouse extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Warehouse: this.data
-        };
-        
+        let body = { Warehouse: this.data };
         let req = { action: 'AddWarehouse', body: body };
 
         if (debug) return req;
@@ -28,10 +25,7 @@ class GetWarehouse extends GetModule {
 
 class UpdateWarehouse extends UpdateModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Warehouse: this.data
-        };
-        
+        let body = { Warehouse: this.data };
         let req = { action: 'UpdateWarehouse', body: body };
 
         if (debug) return req;

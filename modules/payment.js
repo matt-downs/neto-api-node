@@ -5,10 +5,7 @@ const GetModule = require('./methods/get');
 
 class AddPayment extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Payment: this.data
-        };
-
+        let body = { Payment: this.data };
         let req = { action: 'AddPayment', body: body };
 
         if (debug) return req;

@@ -11,10 +11,7 @@ class GetShippingQuote {
     }
 
     exec({ debug = false } = {}) {
-        let body = {
-            ShippingQuote: this.data
-        };
-
+        let body = { ShippingQuote: this.data };
         let req = { action: 'GetShippingQuote', body: body };
 
         if (debug) return req;

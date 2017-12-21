@@ -6,12 +6,9 @@ const UpdateModule = require('./methods/update');
 
 class AddSupplier extends AddModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Supplier: this.data
-        };
-        
+        let body = { Supplier: this.data };
         let req = { action: 'AddSupplier', body: body };
-        
+
         if (debug) return req;
         return sharedModule.postApi(req);
     }
@@ -28,10 +25,7 @@ class GetSupplier extends GetModule {
 
 class UpdateSupplier extends UpdateModule {
     exec({ debug = false } = {}) {
-        let body = {
-            Supplier: this.data
-        };
-        
+        let body = { Supplier: this.data };
         let req = { action: 'UpdateSupplier', body: body };
 
         if (debug) return req;

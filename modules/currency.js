@@ -25,10 +25,7 @@ class UpdateCurrencySettings {
     }
 
     exec({ debug = false } = {}) {
-        let body = {
-            CurrencySettings: this.data
-        };
-
+        let body = { CurrencySettings: this.data };
         let req = { action: 'UpdateCurrencySettings', body: body };
 
         if (debug) return req;
