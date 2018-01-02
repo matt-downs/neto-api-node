@@ -5,7 +5,6 @@ let requestOptions;
 module.exports = {
     init: (config) => {
         if (!config.url) throw 'URL must be specified'
-        if (!config.user) throw 'User must be specified'
         if (!config.key) throw 'Key must be specified'
 
         requestOptions = {
@@ -14,10 +13,11 @@ module.exports = {
             json: true,
             headers: {
                 Accept: 'application/json',
-                NETOAPI_USERNAME: config.user,
                 NETOAPI_KEY: config.key
             }
         };
+
+        if (config.user) requestOptions.headers.NETOAPI_USERNAME = config.user;
     },
     postApi: ({ action, body }) => {
         let options = Object.assign({}, requestOptions);
