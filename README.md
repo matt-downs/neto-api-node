@@ -119,90 +119,90 @@ It's that easy!
 ### `.cart`
 Method | Neto API Action
 --- | ---
-`.get( CartFilter )` | `GetCart`
+<code>.get( CartFilter )</code> | `GetCart`
 
 ### `.category`
 Method | Neto API Action
 --- | ---
-`.add( Category \| Category[] )` | `AddCategory`
-`.get( CategoryFilter )` | `GetCategory`
-`.update( Category \| Category[] )` | `UpdateCategory`
+<code>.add( Category &#124; Category[] )</code> | `AddCategory`
+<code>.get( CategoryFilter )</code> | `GetCategory`
+<code>.update( Category &#124; Category[] )</code> | `UpdateCategory`
 
 ### `.content`
 Method | Neto API Action
 --- | ---
-`.add( Content \| Content[] )` | `AddContent` 
-`.get( ContentFilter )` | `GetContent` 
-`.update( Content \| Content[] )` | `UpdateContent`
+<code>.add( Content &#124; Content[] )</code> | `AddContent` 
+<code>.get( ContentFilter )</code> | `GetContent` 
+<code>.update( Content &#124; Content[] )</code> | `UpdateContent`
 
 ### `.currency`
 Method | Neto API Action
 --- | ---
-`.getSettings()` | `GetCurrencySettings` 
-`.updateSettings( CurrencySettings )` | `UpdateCurrencySettings` 
+<code>.getSettings()</code> | `GetCurrencySettings` 
+<code>.updateSettings( CurrencySettings )</code> | `UpdateCurrencySettings` 
 
 ### `.customer`
 Method | Neto API Action
 --- | ---
-`.add( Customer \| Customer[] )` | `AddCustomer` 
-`.get( CustomerFilter )` | `GetCustomer` 
-`.update( Customer \| Customer[] )` | `UpdateCustomer`
-`.addLog( CustomerLog \| CustomerLog[] )` | `AddCustomerLog`
-`.updateLog( CustomerLog \| CustomerLog[] )` | `UpdateCustomerLog`
+<code>.add( Customer &#124; Customer[] )</code> | `AddCustomer` 
+<code>.get( CustomerFilter )</code> | `GetCustomer` 
+<code>.update( Customer &#124; Customer[] )</code> | `UpdateCustomer`
+<code>.addLog( CustomerLog &#124; CustomerLog[] )</code> | `AddCustomerLog`
+<code>.updateLog( CustomerLog &#124; CustomerLog[] )</code> | `UpdateCustomerLog`
 
 ### `.item`
 Method | Neto API Action
 --- | ---
-`.add( Item \| Item[] )` | `AddItem` 
-`.get( ItemFilter )` | `GetItem` 
-`.update( Item \| Item[] )` | `UpdateItem`
+<code>.add( Item &#124; Item[] )</code> | `AddItem` 
+<code>.get( ItemFilter )</code> | `GetItem` 
+<code>.update( Item &#124; Item[] )</code> | `UpdateItem`
 
 ### `.order`
 Method | Neto API Action
 --- | ---
-`.add( Order \| Order[] )` | `AddOrder` 
-`.get( OrderFilter )` | `GetOrder` 
-`.update( Order \| Order[] )` | `UpdateOrder`
+<code>.add( Order &#124; Order[] )</code> | `AddOrder` 
+<code>.get( OrderFilter )</code> | `GetOrder` 
+<code>.update( Order &#124; Order[] )</code> | `UpdateOrder`
 
 ### `.payment`
 Method | Neto API Action
 --- | ---
-`.add( Payment \| Payment[] )` | `AddPayment` 
-`.get( PaymentFilter )` | `GetPayment` 
-`.getMethods()` | `GetPaymentMethods`
+<code>.add( Payment &#124; Payment[] )</code> | `AddPayment` 
+<code>.get( PaymentFilter )</code> | `GetPayment` 
+<code>.getMethods()</code> | `GetPaymentMethods`
 
 ### `.rma`
 Method | Neto API Action
 --- | ---
-`.add( Rma \| Rma[] )` | `AddRma` 
-`.get( RmaFilter )` | `GetRma` 
+<code>.add( Rma &#124; Rma[] )</code> | `AddRma` 
+<code>.get( RmaFilter )</code> | `GetRma` 
 
 ### `.shipping`
 Method | Neto API Action
 --- | ---
-`.getMethods()` | `GetShippingMethods` 
-`.getQuote( ShippingQuote )` | `GetShippingQuote` 
+<code>.getMethods()</code> | `GetShippingMethods` 
+<code>.getQuote( ShippingQuote )</code> | `GetShippingQuote` 
 
 ### `.supplier`
 Method | Neto API Action
 --- | ---
-`.add( Supplier \| Supplier[] )` | `AddSupplier` 
-`.get( SupplierFilter )` | `GetSupplier` 
-`.update( Supplier \| Supplier[] )` | `UpdateSupplier`
+<code>.add( Supplier &#124; Supplier[] )</code> | `AddSupplier` 
+<code>.get( SupplierFilter )</code> | `GetSupplier` 
+<code>.update( Supplier &#124; Supplier[] )</code> | `UpdateSupplier`
 
 ### `.voucher`
 Method | Neto API Action
 --- | ---
-`.add( Voucher \| Voucher[] )` | `AddVoucher` 
-`.get( VoucherFilter )` | `GetVoucher` 
-`.update( Voucher \| Voucher[] )` | `UpdateVoucher`
+<code>.add( Voucher &#124; Voucher[] )</code> | `AddVoucher` 
+<code>.get( VoucherFilter )</code> | `GetVoucher` 
+<code>.update( Voucher &#124; Voucher[] )</code> | `UpdateVoucher`
 
 ### `.warehouse`
 Method | Neto API Action
 --- | ---
-`.add( Warehouse \| Warehouse[] )` | `AddWarehouse` 
-`.get( WarehouseFilter )` | `GetWarehouse` 
-`.update( Warehouse \| Warehouse[] )` | `UpdateWarehouse`
+<code>.add( Warehouse &#124; Warehouse[] )</code> | `AddWarehouse` 
+<code>.get( WarehouseFilter )</code> | `GetWarehouse` 
+<code>.update( Warehouse &#124; Warehouse[] )</code> | `UpdateWarehouse`
 
 
 ## Endpoint actions supported
