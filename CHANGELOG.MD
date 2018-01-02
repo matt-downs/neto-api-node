@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.1] - 2018-01-02
+### Changed
+- `user` key is no longer required when initialising the library
+- Updated mocha devDependency to latest version
+### Fixed
+- Fixed documentation table layout on npmjs.com
+
 ## [1.1.0] - 2017-12-21
 ### Added
 - Ability to use `.get()` without `.output()`

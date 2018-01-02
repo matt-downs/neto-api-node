@@ -12,7 +12,7 @@ const Neto = require('neto-api');
 
 const mySite = new Neto({
     url: 'https://myawesomesite.neto.com.au',
-    user: 'user',
+    user: 'user', // optional
     key: 'api-key'
 });
 ```
