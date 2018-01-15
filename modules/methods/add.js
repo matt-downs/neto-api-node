@@ -4,12 +4,6 @@ class AddModule {
         return this.add(data);
     }
 
-    // Logs object to console
-    debug() {
-        console.log(this);
-        return this;
-    }
-
     add(data) {
         if (Array.isArray(data)) {
             for (let element of data) {

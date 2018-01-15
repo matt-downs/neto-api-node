@@ -4,12 +4,6 @@ class UpdateModule {
         return this.update(data);
     }
 
-    // Logs object to console
-    debug() {
-        console.log(this);
-        return this;
-    }
-
     update(data) {
         if (Array.isArray(data)) {
             for (let element of data) {
