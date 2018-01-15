@@ -1,16 +1,13 @@
-const sharedModule = require('../shared');
 const AddModule = require('./methods/add');
 const GetModule = require('./methods/get');
 const UpdateModule = require('./methods/update');
 
 
 class AddCategory extends AddModule {
-    exec({ debug = false } = {}) {
-        let body = { Category: this.data };
-        let req = { action: 'AddCategory', body: body };
-
-        if (debug) return req;
-        return sharedModule.postApi(req);
+    exec(params = {}) {
+        params.action = 'AddCategory';
+        params.schema = 'Category';
+        return super.exec(params);
     }
 }
 
@@ -24,12 +21,10 @@ class GetCategory extends GetModule {
 
 
 class UpdateCategory extends UpdateModule {
-    exec({ debug = false } = {}) {
-        let body = { Category: this.data };
-        let req = { action: 'UpdateCategory', body: body };
-
-        if (debug) return req;
-        return sharedModule.postApi(req);
+    exec(params = {}) {
+        params.action = 'UpdateCategory';
+        params.schema = 'Category';
+        return super.exec(params);
     }
 }
 

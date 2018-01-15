@@ -5,12 +5,10 @@ const UpdateModule = require('./methods/update');
 
 
 class AddCustomer extends AddModule {
-    exec({ debug = false } = {}) {
-        let body = { Customer: this.data };
-        let req = { action: 'AddCustomer', body: body };
-
-        if (debug) return req;
-        return sharedModule.postApi(req);
+    exec(params = {}) {
+        params.action = 'AddCustomer';
+        params.schema = 'Customer';
+        return super.exec(params);
     }
 }
 
@@ -24,12 +22,10 @@ class GetCustomer extends GetModule {
 
 
 class UpdateCustomer extends UpdateModule {
-    exec({ debug = false } = {}) {
-        let body = { Customer: this.data };
-        let req = { action: 'UpdateCustomer', body: body };
-
-        if (debug) return req;
-        return sharedModule.postApi(req);
+    exec(params = {}) {
+        params.action = 'UpdateCustomer';
+        params.schema = 'Customer';
+        return super.exec(params);
     }
 }
 
@@ -45,7 +41,7 @@ class AddCustomerLog {
         return this;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             CustomerLogs: {
                 CustomerLog: this.addModule.data
@@ -70,7 +66,7 @@ class UpdateCustomerLog {
         return this;
     }
 
-    exec() {
+    exec({ debug = false } = {}) {
         let body = {
             CustomerLogs: {
                 CustomerLog: this.updateModule.data
