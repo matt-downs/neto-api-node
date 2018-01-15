@@ -2,24 +2,28 @@ const Joi = require('Joi');
 
 
 describe('item', function() {
-    it('should contain a .add() function', function() {
-        Joi.assert(this.api.item.add, Joi.func().required());
-    });
-
-    it('should contain a .get() function', function() {
-        Joi.assert(this.api.item.get, Joi.func().required());
-    });
-
-    it('should contain a .update() function', function() {
-        Joi.assert(this.api.item.update, Joi.func().required());
-    });
 
     describe('.add()', function() {
-        it('should contain a .exec() function', function() {
-            Joi.assert(this.api.item.add().exec, Joi.func().required());
+
+        it('should be a function', function() {
+            Joi.assert(this.api.item.add, Joi.func().required());
         });
 
+        describe('.exec()', function() {
+
+            it('should be a function', function() {
+                Joi.assert(this.api.item.add().exec, Joi.func().required());
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.add().exec().then, Joi.func()
+                    .required());
+            });
+
+        })
+
         describe('request', function() {
+
             before(function() {
                 this.data = this.api.item
                     .add({ SKU: 'test' })
@@ -46,20 +50,41 @@ describe('item', function() {
                 };
                 Joi.assert(this.data.body, schema);
             });
+
         });
+
     });
 
     describe('.get()', function() {
-        it('should contain a .output() function', function() {
-            Joi.assert(this.api.item.get().output, Joi.func().required());
+
+        it('should be a function', function() {
+            Joi.assert(this.api.item.get, Joi.func().required());
         });
+    
+        describe('.exec()', function() {
+
+            it('should be a function', function() {
+                Joi.assert(this.api.item.get().exec, Joi.func().required());
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.get().exec().then, Joi.func()
+                    .required());
+            });
+
+        })
 
         describe('.output()', function() {
+            
             before(function() {
                 this.data = this.api.item
                     .get({ SKU: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
+            });
+
+            it('should be a function', function() {
+                Joi.assert(this.api.item.get().output, Joi.func().required());
             });
 
             it('should add the array param to the OutputSelector key',
@@ -75,13 +100,11 @@ describe('item', function() {
                     };
                     Joi.assert(this.data.body, schema);
                 });
-        });
 
-        it('should contain a .exec() function', function() {
-            Joi.assert(this.api.item.get().exec, Joi.func().required());
         });
 
         describe('request', function() {
+
             before(function() {
                 this.data = this.api.item
                     .get({
@@ -105,15 +128,32 @@ describe('item', function() {
                 };
                 Joi.assert(this.data.body, schema);
             });
+
         });
+
     });
 
     describe('.update()', function() {
-        it('should contain a .exec() function', function() {
-            Joi.assert(this.api.item.update().exec, Joi.func().required());
+
+        it('should be a function', function() {
+            Joi.assert(this.api.item.update, Joi.func().required());
         });
+        
+        describe('.exec()', function() {
+
+            it('should be a function', function() {
+                Joi.assert(this.api.item.update().exec, Joi.func().required());
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.update().exec().then, Joi.func()
+                    .required());
+            });
+
+        })
 
         describe('request', function() {
+
             before(function() {
                 this.data = this.api.item
                     .update({ SKU: 'test' })
@@ -140,7 +180,9 @@ describe('item', function() {
                 };
                 Joi.assert(this.data.body, schema);
             });
+
         });
+
     });
 
 });
