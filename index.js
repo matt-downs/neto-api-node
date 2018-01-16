@@ -1,18 +1,17 @@
-const sharedModule = require('./shared');
-const itemModule = require('./modules/item');
-const orderModule = require('./modules/order');
-const customerModule = require('./modules/customer');
-const categoryModule = require('./modules/category');
-const contentModule = require('./modules/content');
-const cartModule = require('./modules/cart');
-const supplierModule = require('./modules/supplier');
-const voucherModule = require('./modules/voucher');
-const warehouseModule = require('./modules/warehouse');
-const rmaModule = require('./modules/rma');
-const shippingModule = require('./modules/shipping');
-const currencyModule = require('./modules/currency');
-const paymentModule = require('./modules/payment');
-
+const sharedModule = require('./src/shared');
+const itemModule = require('./src/modules/item');
+const orderModule = require('./src/modules/order');
+const customerModule = require('./src/modules/customer');
+const categoryModule = require('./src/modules/category');
+const contentModule = require('./src/modules/content');
+const cartModule = require('./src/modules/cart');
+const supplierModule = require('./src/modules/supplier');
+const voucherModule = require('./src/modules/voucher');
+const warehouseModule = require('./src/modules/warehouse');
+const rmaModule = require('./src/modules/rma');
+const shippingModule = require('./src/modules/shipping');
+const currencyModule = require('./src/modules/currency');
+const paymentModule = require('./src/modules/payment');
 
 
 class Neto {
