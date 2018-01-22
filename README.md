@@ -205,68 +205,12 @@ Method | Neto API Action
 <code>.update( Warehouse &#124; Warehouse[] )</code> | `UpdateWarehouse`
 
 
-## Endpoint actions supported
-- [ ] Accounting (TODO)
+## Endpoint actions not supported yet
+- [ ] Accounting
     - [ ] `UpdateAccountingSystemRelatedAccount`
     - [ ] `DeleteAccountingSystemRelatedAccount`
     - [ ] `AddAccountingSystemRelatedAccount`
     - [ ] `GetAccountingSystemRelatedAccounts`
-- [x] Cart
-    - [x] `GetCart`
-- [x] Category
-    - [x] `AddCategory`
-    - [x] `GetCategory`
-    - [x] `UpdateCategory`
-- [x] Content
-    - [x] `AddContent`
-    - [x] `GetContent`
-    - [x] `UpdateContent`
-- [x] Currency
-    - [x] `GetCurrencySettings`
-    - [x] `UpdateCurrencySettings`
-- [x] Customer
-    - [x] `AddCustomer`
-    - [x] `GetCustomer`
-    - [x] `UpdateCustomer`
-    - [x] `AddCustomerLog`
-    - [x] `UpdateCustomerLog`
-- [x] Item
-    - [x] `AddItem`
-    - [x] `GetItem`
-    - [x] `UpdateItem`
-- [x] Order
-    - [x] `AddOrder`
-    - [x] `GetOrder`
-    - [x] `UpdateOrder`
-- [x] Payment
-    - [x] `AddPayment`
-    - [x] `GetPayment`
-    - [x] `GetPaymentMethods`
-- [x] RMA
-    - [x] `AddRma`
-    - [x] `GetRma`
-- [x] Shipping
-    - [x] `GetShippingMethods`
-    - [x] `GetShippingQuote`
-- [x] Supplier
-    - [x] `GetSupplier`
-    - [x] `UpdateSupplier`
-    - [x] `AddSupplier`
-- [x] Voucher
-    - [x] `UpdateVoucher`
-    - [x] `AddVoucher`
-    - [x] `GetVoucher`
-- [x] Warehouse
-    - [x] `AddWarehouse`
-    - [x] `UpdateWarehouse`
-    - [x] `GetWarehouse`
-
-
-## Potential future features
-- [ ] JOI validation before submission
-    - [ ] Create global config to enable/disable JOI
-- [ ] Add to the [ProgrammableWeb Neto API SDK page](https://www.programmableweb.com/api/neto/sdks)
-- [ ] TypeScript support
 
 
 Neto API documentation available [here](http://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/).
