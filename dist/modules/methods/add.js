@@ -1,6 +1,6 @@
 "use strict";
-const sharedModule = require('../../shared');
-class AddModule {
+const sharedModule = require("../../shared");
+module.exports = class AddModule {
     constructor(data) {
         this.data = [];
         return this.add(data);
@@ -23,5 +23,4 @@ class AddModule {
             return req;
         return sharedModule.postApi(req);
     }
-}
-module.exports = AddModule;
+};

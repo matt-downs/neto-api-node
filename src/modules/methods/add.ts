@@ -1,13 +1,15 @@
-const sharedModule = require('../../shared');
+import sharedModule = require('../../shared');
 
 
-class UpdateModule {
-    constructor(data) {
+export = class AddModule {
+    data: any;
+
+    constructor(data: any) {
         this.data = [];
-        return this.update(data);
+        return this.add(data);
     }
 
-    update(data) {
+    add(data: any) {
         if (Array.isArray(data)) {
             for (let element of data) {
                 this.data.push(element);
@@ -17,8 +19,8 @@ class UpdateModule {
         return this;
     }
 
-    exec({ debug = false, action, schema }) {
-        let body = {};
+    exec({ debug = false, action, schema }: { debug ? : boolean, action: string, schema: string }) {
+        let body: any = {};
         body[schema] = this.data;
         let req = { action: action, body: body };
 
@@ -26,6 +28,3 @@ class UpdateModule {
         return sharedModule.postApi(req);
     }
 }
-
-
-module.exports = UpdateModule;

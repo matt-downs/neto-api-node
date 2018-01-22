@@ -1,6 +1,6 @@
 "use strict";
-const sharedModule = require('../../shared');
-class GetModule {
+const sharedModule = require("../../shared");
+module.exports = class GetModule {
     constructor(filter) {
         this.body = {
             Filter: {}
@@ -21,5 +21,4 @@ class GetModule {
             return req;
         return sharedModule.postApi(req);
     }
-}
-module.exports = GetModule;
+};
