@@ -1,4 +1,4 @@
-const Neto = require('../index');
+const Neto = require('../dist/index');
 
 
 before(function() {
