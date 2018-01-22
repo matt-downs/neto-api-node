@@ -7,6 +7,8 @@
   "scripts": {
     "pretest": "npm run build",
     "test": "nyc mocha --timeout=3000",
+    "posttest": "rimraf .nyc_output",
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "prepublish": "npm run build",
     "publish": "npm publish",
@@ -24,7 +26,8 @@
   "homepage": "https://github.com/matt-downs/neto-api-node#readme",
   "dependencies": {
     "@types/request": "^2.0.12",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "joi": "^13.0.2",
