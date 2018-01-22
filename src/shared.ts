@@ -1,36 +1,33 @@
-import request = require('request');
-
+import request = require("request");
 
 export interface ExecOptions {
-    debug ? : boolean;
+    debug?: boolean;
 }
 
 export interface InitOptions {
     url: string;
     key: string;
-    user ? : string;
+    user?: string;
 }
 
 let requestOptions: (request.UriOptions & request.CoreOptions) | (request.UrlOptions & request.CoreOptions);
 
-
 export function init(config: InitOptions) {
-    if (!config.url) throw 'URL must be specified'
-    if (!config.key) throw 'Key must be specified'
+    if (!config.url) { throw "URL must be specified"; }
+    if (!config.key) { throw "Key must be specified"; }
 
     requestOptions = {
-        url: config.url + '/do/WS/NetoAPI',
-        strictSSL: true,
-        json: true,
         headers: {
-            Accept: 'application/json',
-            NETOAPI_KEY: config.key
-        }
+            Accept: "application/json",
+            NETOAPI_KEY: config.key,
+        },
+        json: true,
+        strictSSL: true,
+        url: config.url + "/do/WS/NetoAPI",
     };
 
-    if (config.user) requestOptions.headers!.NETOAPI_USERNAME = config.user;
+    if (config.user) { requestOptions.headers!.NETOAPI_USERNAME = config.user; }
 }
-
 
 export function postApi({ action, body }: { action: string, body: any }): Promise < any > {
     let options = Object.assign({}, requestOptions);
@@ -38,11 +35,11 @@ export function postApi({ action, body }: { action: string, body: any }): Promis
     options.body = body;
 
     return new Promise((resolve, reject) => {
-        request.post(options, (error, response, body) => {
-            // Catch any errors 
-            if (body.Ack != 'Success') return reject(body.Messages);
+        request.post(options, (error, response, responseBody) => {
+            // Catch any errors
+            if (responseBody.Ack !== "Success") { return reject(responseBody.Messages); }
 
-            resolve(body);
+            resolve(responseBody);
         });
     });
 }

@@ -1,18 +1,19 @@
-import sharedModule = require('./shared');
-import itemModule = require('./modules/item');
-import orderModule = require('./modules/order');
-import customerModule = require('./modules/customer');
-import categoryModule = require('./modules/category');
-import contentModule = require('./modules/content');
-import cartModule = require('./modules/cart');
-import supplierModule = require('./modules/supplier');
-import voucherModule = require('./modules/voucher');
-import warehouseModule = require('./modules/warehouse');
-import rmaModule = require('./modules/rma');
-import shippingModule = require('./modules/shipping');
-import currencyModule = require('./modules/currency');
-import paymentModule = require('./modules/payment');
 
+import cartModule = require("./modules/cart");
+import categoryModule = require("./modules/category");
+import contentModule = require("./modules/content");
+import currencyModule = require("./modules/currency");
+import customerModule = require("./modules/customer");
+import itemModule = require("./modules/item");
+import orderModule = require("./modules/order");
+import paymentModule = require("./modules/payment");
+import rmaModule = require("./modules/rma");
+import shippingModule = require("./modules/shipping");
+import supplierModule = require("./modules/supplier");
+import voucherModule = require("./modules/voucher");
+import warehouseModule = require("./modules/warehouse");
+
+import sharedModule = require("./shared");
 
 export = class Neto {
     public item = itemModule.methods;
@@ -32,4 +33,4 @@ export = class Neto {
     constructor(options: sharedModule.InitOptions) {
         sharedModule.init(options);
     }
-}
+};
