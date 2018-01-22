@@ -1,5 +1,5 @@
 # neto-api
-A promise based Neto API client for Node
+A promise based Neto API client for Node - built in TypeScript and compiled to JavaScript.
 
 
 ### `npm install neto-api`
