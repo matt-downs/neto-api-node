@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const GetModule = require("./methods/get");
 class GetCart extends GetModule {
     exec(params = {}) {
@@ -8,7 +9,8 @@ class GetCart extends GetModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
+exports.GetCart = GetCart;
+exports.methods = {
     get: (filter) => {
         return new GetCart(filter);
     }

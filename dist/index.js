@@ -15,19 +15,19 @@ const currencyModule = require("./modules/currency");
 const paymentModule = require("./modules/payment");
 module.exports = class Neto {
     constructor(options) {
+        this.item = itemModule.methods;
+        this.order = orderModule.methods;
+        this.customer = customerModule.methods;
+        this.category = categoryModule.methods;
+        this.content = contentModule.methods;
+        this.cart = cartModule.methods;
+        this.supplier = supplierModule.methods;
+        this.voucher = voucherModule.methods;
+        this.warehouse = warehouseModule.methods;
+        this.rma = rmaModule.methods;
+        this.shipping = shippingModule.methods;
+        this.currency = currencyModule.methods;
+        this.payment = paymentModule.methods;
         sharedModule.init(options);
-        this.item = itemModule;
-        this.order = orderModule;
-        this.customer = customerModule;
-        this.category = categoryModule;
-        this.content = contentModule;
-        this.cart = cartModule;
-        this.supplier = supplierModule;
-        this.voucher = voucherModule;
-        this.warehouse = warehouseModule;
-        this.rma = rmaModule;
-        this.shipping = shippingModule;
-        this.currency = currencyModule;
-        this.payment = paymentModule;
     }
 };

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sharedModule = require("../shared");
 class GetCurrencySettings {
     constructor() {
@@ -11,6 +12,7 @@ class GetCurrencySettings {
         return sharedModule.postApi(req);
     }
 }
+exports.GetCurrencySettings = GetCurrencySettings;
 class UpdateCurrencySettings {
     constructor(data) {
         return this.updateSettings(data);
@@ -27,7 +29,8 @@ class UpdateCurrencySettings {
         return sharedModule.postApi(req);
     }
 }
-module.exports = {
+exports.UpdateCurrencySettings = UpdateCurrencySettings;
+exports.methods = {
     getSettings: () => {
         return new GetCurrencySettings();
     },

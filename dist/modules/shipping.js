@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sharedModule = require("../shared");
 class GetShippingQuote {
     constructor(data) {
@@ -16,6 +17,7 @@ class GetShippingQuote {
         return sharedModule.postApi(req);
     }
 }
+exports.GetShippingQuote = GetShippingQuote;
 class GetShippingMethods {
     constructor() {
         return this;
@@ -27,7 +29,8 @@ class GetShippingMethods {
         return sharedModule.postApi(req);
     }
 }
-module.exports = {
+exports.GetShippingMethods = GetShippingMethods;
+exports.methods = {
     getMethods: () => {
         return new GetShippingMethods();
     },

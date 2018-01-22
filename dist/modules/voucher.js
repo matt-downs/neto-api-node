@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const AddModule = require("./methods/add");
 const GetModule = require("./methods/get");
 const UpdateModule = require("./methods/update");
@@ -11,6 +12,7 @@ class AddVoucher extends AddModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.AddVoucher = AddVoucher;
 class GetVoucher extends GetModule {
     exec(params = {}) {
         let superParams = {
@@ -19,6 +21,7 @@ class GetVoucher extends GetModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.GetVoucher = GetVoucher;
 class UpdateVoucher extends UpdateModule {
     exec(params = {}) {
         let superParams = {
@@ -28,7 +31,8 @@ class UpdateVoucher extends UpdateModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
+exports.UpdateVoucher = UpdateVoucher;
+exports.methods = {
     add: (data) => {
         return new AddVoucher(data);
     },

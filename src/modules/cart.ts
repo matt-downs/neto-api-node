@@ -2,7 +2,7 @@ import GetModule = require('./methods/get');
 import { ExecOptions } from '../shared';
 
 
-class GetCart extends GetModule {
+export class GetCart extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetCart'
@@ -12,7 +12,7 @@ class GetCart extends GetModule {
 }
 
 
-export = {
+export const methods = {
     get: (filter: any) => {
         return new GetCart(filter);
     }

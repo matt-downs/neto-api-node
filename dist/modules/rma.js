@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const AddModule = require("./methods/add");
 const GetModule = require("./methods/get");
 class AddRma extends AddModule {
@@ -10,6 +11,7 @@ class AddRma extends AddModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.AddRma = AddRma;
 class GetRma extends GetModule {
     exec(params = {}) {
         let superParams = {
@@ -18,7 +20,8 @@ class GetRma extends GetModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
+exports.GetRma = GetRma;
+exports.methods = {
     add: (data) => {
         return new AddRma(data);
     },

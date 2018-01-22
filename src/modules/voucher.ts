@@ -4,7 +4,7 @@ import UpdateModule = require('./methods/update');
 import { ExecOptions } from '../shared';
 
 
-class AddVoucher extends AddModule {
+export class AddVoucher extends AddModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddVoucher',
@@ -15,7 +15,7 @@ class AddVoucher extends AddModule {
 }
 
 
-class GetVoucher extends GetModule {
+export class GetVoucher extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetVoucher'
@@ -25,7 +25,7 @@ class GetVoucher extends GetModule {
 }
 
 
-class UpdateVoucher extends UpdateModule {
+export class UpdateVoucher extends UpdateModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateVoucher',
@@ -36,7 +36,7 @@ class UpdateVoucher extends UpdateModule {
 }
 
 
-export = {
+export const methods = {
     add: (data: any) => {
         return new AddVoucher(data);
     },

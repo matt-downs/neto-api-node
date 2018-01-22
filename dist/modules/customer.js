@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sharedModule = require("../shared");
 const AddModule = require("./methods/add");
 const GetModule = require("./methods/get");
@@ -12,6 +13,7 @@ class AddCustomer extends AddModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.AddCustomer = AddCustomer;
 class GetCustomer extends GetModule {
     exec(params = {}) {
         let superParams = {
@@ -20,6 +22,7 @@ class GetCustomer extends GetModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.GetCustomer = GetCustomer;
 class UpdateCustomer extends UpdateModule {
     exec(params = {}) {
         let superParams = {
@@ -29,6 +32,7 @@ class UpdateCustomer extends UpdateModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.UpdateCustomer = UpdateCustomer;
 class AddCustomerLog {
     constructor(data) {
         this.addModule = new AddModule(data);
@@ -50,6 +54,7 @@ class AddCustomerLog {
         return sharedModule.postApi(req);
     }
 }
+exports.AddCustomerLog = AddCustomerLog;
 class UpdateCustomerLog {
     constructor(data) {
         this.updateModule = new UpdateModule(data);
@@ -71,7 +76,8 @@ class UpdateCustomerLog {
         return sharedModule.postApi(req);
     }
 }
-module.exports = {
+exports.UpdateCustomerLog = UpdateCustomerLog;
+exports.methods = {
     add: (data) => {
         return new AddCustomer(data);
     },

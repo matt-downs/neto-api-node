@@ -4,7 +4,7 @@ import UpdateModule = require('./methods/update');
 import { ExecOptions } from '../shared';
 
 
-class AddCategory extends AddModule {
+export class AddCategory extends AddModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddCategory',
@@ -15,7 +15,7 @@ class AddCategory extends AddModule {
 }
 
 
-class GetCategory extends GetModule {
+export class GetCategory extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetCategory'
@@ -25,7 +25,7 @@ class GetCategory extends GetModule {
 }
 
 
-class UpdateCategory extends UpdateModule {
+export class UpdateCategory extends UpdateModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateCategory',
@@ -36,7 +36,7 @@ class UpdateCategory extends UpdateModule {
 }
 
 
-export = {
+export const methods = {
     add: (data: any) => {
         return new AddCategory(data);
     },

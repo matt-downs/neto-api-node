@@ -4,7 +4,7 @@ import UpdateModule = require('./methods/update');
 import { ExecOptions } from '../shared';
 
 
-class AddRma extends AddModule {
+export class AddRma extends AddModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddRma',
@@ -15,7 +15,7 @@ class AddRma extends AddModule {
 }
 
 
-class GetRma extends GetModule {
+export class GetRma extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetRma'
@@ -25,7 +25,7 @@ class GetRma extends GetModule {
 }
 
 
-export = {
+export const methods = {
     add: (data: any) => {
         return new AddRma(data);
     },

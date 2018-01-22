@@ -4,7 +4,7 @@ import GetModule = require('./methods/get');
 import UpdateModule = require('./methods/update');
 
 
-class AddCustomer extends AddModule {
+export class AddCustomer extends AddModule {
     public exec(params: sharedModule.ExecOptions = {}) {
         let superParams = {
             action: 'AddCustomer',
@@ -15,7 +15,7 @@ class AddCustomer extends AddModule {
 }
 
 
-class GetCustomer extends GetModule {
+export class GetCustomer extends GetModule {
     public exec(params: sharedModule.ExecOptions = {}) {
         let superParams = {
             action: 'GetCustomer'
@@ -25,7 +25,7 @@ class GetCustomer extends GetModule {
 }
 
 
-class UpdateCustomer extends UpdateModule {
+export class UpdateCustomer extends UpdateModule {
     public exec(params: sharedModule.ExecOptions = {}) {
         let superParams = {
             action: 'UpdateCustomer',
@@ -36,7 +36,7 @@ class UpdateCustomer extends UpdateModule {
 }
 
 
-class AddCustomerLog {
+export class AddCustomerLog {
     private addModule: any;
 
     constructor(data: any) {
@@ -63,7 +63,7 @@ class AddCustomerLog {
 }
 
 
-class UpdateCustomerLog {
+export class UpdateCustomerLog {
     private updateModule: any;
 
     constructor(data: any) {
@@ -90,7 +90,7 @@ class UpdateCustomerLog {
 }
 
 
-export = {
+export const methods = {
     add: (data: any) => {
         return new AddCustomer(data);
     },

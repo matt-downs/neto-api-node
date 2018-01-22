@@ -4,7 +4,7 @@ import UpdateModule = require('./methods/update');
 import { ExecOptions } from '../shared';
 
 
-class AddSupplier extends AddModule {
+export class AddSupplier extends AddModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddSupplier',
@@ -15,7 +15,7 @@ class AddSupplier extends AddModule {
 }
 
 
-class GetSupplier extends GetModule {
+export class GetSupplier extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetSupplier'
@@ -25,7 +25,7 @@ class GetSupplier extends GetModule {
 }
 
 
-class UpdateSupplier extends UpdateModule {
+export class UpdateSupplier extends UpdateModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateSupplier',
@@ -36,7 +36,7 @@ class UpdateSupplier extends UpdateModule {
 }
 
 
-export = {
+export const methods = {
     add: (data: any) => {
         return new AddSupplier(data);
     },

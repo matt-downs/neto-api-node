@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sharedModule = require("../shared");
 const AddModule = require("./methods/add");
 const GetModule = require("./methods/get");
@@ -11,6 +12,7 @@ class AddPayment extends AddModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.AddPayment = AddPayment;
 class GetPayment extends GetModule {
     exec(params = {}) {
         let superParams = {
@@ -19,6 +21,7 @@ class GetPayment extends GetModule {
         return super.exec(Object.assign(superParams, params));
     }
 }
+exports.GetPayment = GetPayment;
 class GetPaymentMethods {
     constructor() {
         return this;
@@ -30,7 +33,8 @@ class GetPaymentMethods {
         return sharedModule.postApi(req);
     }
 }
-module.exports = {
+exports.GetPaymentMethods = GetPaymentMethods;
+exports.methods = {
     getMethods: () => {
         return new GetPaymentMethods();
     },

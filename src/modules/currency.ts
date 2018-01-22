@@ -1,7 +1,7 @@
 import sharedModule = require('../shared');
 
 
-class GetCurrencySettings {
+export class GetCurrencySettings {
     constructor() {
         return this;
     }
@@ -15,7 +15,7 @@ class GetCurrencySettings {
 }
 
 
-class UpdateCurrencySettings {
+export class UpdateCurrencySettings {
     private data: any; 
 
     constructor(data: any) {
@@ -37,7 +37,7 @@ class UpdateCurrencySettings {
 }
 
 
-export = {
+export const methods = {
     getSettings: () => {
         return new GetCurrencySettings();
     },

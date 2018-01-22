@@ -15,36 +15,21 @@ import paymentModule = require('./modules/payment');
 
 
 export = class Neto {
+    public item = itemModule.methods;
+    public order = orderModule.methods;
+    public customer = customerModule.methods;
+    public category = categoryModule.methods;
+    public content = contentModule.methods;
+    public cart = cartModule.methods;
+    public supplier = supplierModule.methods;
+    public voucher = voucherModule.methods;
+    public warehouse = warehouseModule.methods;
+    public rma = rmaModule.methods;
+    public shipping = shippingModule.methods;
+    public currency = currencyModule.methods;
+    public payment = paymentModule.methods;
+
     constructor(options: sharedModule.InitOptions) {
         sharedModule.init(options);
-
-        this.item = itemModule;
-        this.order = orderModule;
-        this.customer = customerModule;
-        this.category = categoryModule;
-        this.content = contentModule;
-        this.cart = cartModule;
-        this.supplier = supplierModule;
-        this.voucher = voucherModule;
-        this.warehouse = warehouseModule;
-        this.rma = rmaModule;
-        this.shipping = shippingModule;
-        this.currency = currencyModule;
-        this.payment = paymentModule;
     }
-
-    // TODO fix this
-    item: any;
-    order: any;
-    customer: any;
-    category: any;
-    content: any;
-    cart: any;
-    supplier: any;
-    voucher: any;
-    warehouse: any;
-    rma: any;
-    shipping: any;
-    currency: any;
-    payment: any;
 }

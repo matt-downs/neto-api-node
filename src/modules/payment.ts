@@ -3,7 +3,7 @@ import AddModule = require('./methods/add');
 import GetModule = require('./methods/get');
 
 
-class AddPayment extends AddModule {
+export class AddPayment extends AddModule {
     public exec(params: sharedModule.ExecOptions = {}) {
         let superParams = {
             action: 'AddPayment',
@@ -14,7 +14,7 @@ class AddPayment extends AddModule {
 }
 
 
-class GetPayment extends GetModule {
+export class GetPayment extends GetModule {
     public exec(params: sharedModule.ExecOptions = {}) {
         let superParams = {
             action: 'GetPayment'
@@ -24,7 +24,7 @@ class GetPayment extends GetModule {
 }
 
 
-class GetPaymentMethods {
+export class GetPaymentMethods {
     constructor() {
         return this;
     }
@@ -38,7 +38,7 @@ class GetPaymentMethods {
 }
 
 
-export = {
+export const methods = {
     getMethods: () => {
         return new GetPaymentMethods();
     },
