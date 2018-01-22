@@ -1,5 +1,5 @@
 "use strict";
-const sharedModule = require('../shared');
+const sharedModule = require("../shared");
 class GetCurrencySettings {
     constructor() {
         return this;
@@ -17,6 +17,7 @@ class UpdateCurrencySettings {
     }
     updateSettings(data) {
         this.data = data;
+        return this;
     }
     exec({ debug = false } = {}) {
         let body = { CurrencySettings: this.data };

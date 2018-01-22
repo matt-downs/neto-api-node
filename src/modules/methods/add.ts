@@ -2,14 +2,14 @@ import sharedModule = require('../../shared');
 
 
 export = class AddModule {
-    data: any;
+    private data: any;
 
     constructor(data: any) {
         this.data = [];
         return this.add(data);
     }
 
-    add(data: any) {
+    public add(data: any) {
         if (Array.isArray(data)) {
             for (let element of data) {
                 this.data.push(element);
@@ -19,7 +19,7 @@ export = class AddModule {
         return this;
     }
 
-    exec({ debug = false, action, schema }: { debug ? : boolean, action: string, schema: string }) {
+    public exec({ debug = false, action, schema }: { debug ? : boolean, action: string, schema: string }) {
         let body: any = {};
         body[schema] = this.data;
         let req = { action: action, body: body };

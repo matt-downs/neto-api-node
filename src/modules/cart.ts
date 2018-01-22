@@ -1,15 +1,19 @@
-"use strict";
-const GetModule = require("./methods/get");
+import GetModule = require('./methods/get');
+import { ExecOptions } from '../shared';
+
+
 class GetCart extends GetModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetCart'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
-    get: (filter) => {
+
+
+export = {
+    get: (filter: any) => {
         return new GetCart(filter);
     }
 };

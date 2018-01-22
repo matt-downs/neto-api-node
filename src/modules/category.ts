@@ -1,41 +1,49 @@
-"use strict";
-const AddModule = require("./methods/add");
-const GetModule = require("./methods/get");
-const UpdateModule = require("./methods/update");
+import AddModule = require('./methods/add');
+import GetModule = require('./methods/get');
+import UpdateModule = require('./methods/update');
+import { ExecOptions } from '../shared';
+
+
 class AddCategory extends AddModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddCategory',
             schema: 'Category'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class GetCategory extends GetModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetCategory'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class UpdateCategory extends UpdateModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateCategory',
             schema: 'Category'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
-    add: (data) => {
+
+
+export = {
+    add: (data: any) => {
         return new AddCategory(data);
     },
-    get: (filter) => {
+    get: (filter: any) => {
         return new GetCategory(filter);
     },
-    update: (data) => {
+    update: (data: any) => {
         return new UpdateCategory(data);
     }
 };

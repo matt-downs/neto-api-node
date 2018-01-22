@@ -1,5 +1,10 @@
 import request = require('request');
 
+
+export interface ExecOptions {
+    debug ? : boolean;
+}
+
 export interface InitOptions {
     url: string;
     key: string;

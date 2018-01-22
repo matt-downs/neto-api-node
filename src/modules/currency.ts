@@ -1,4 +1,4 @@
-const sharedModule = require('../shared');
+import sharedModule = require('../shared');
 
 
 class GetCurrencySettings {
@@ -6,7 +6,7 @@ class GetCurrencySettings {
         return this;
     }
 
-    exec({ debug = false } = {}) {
+    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
         let req = { action: 'GetCurrencySettings', body: {} };
 
         if (debug) return req;
@@ -16,15 +16,18 @@ class GetCurrencySettings {
 
 
 class UpdateCurrencySettings {
-    constructor(data) {
+    private data: any; 
+
+    constructor(data: any) {
         return this.updateSettings(data);
     }
 
-    updateSettings(data) {
+    public updateSettings(data: any) {
         this.data = data;
+        return this;
     }
 
-    exec({ debug = false } = {}) {
+    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
         let body = { CurrencySettings: this.data };
         let req = { action: 'UpdateCurrencySettings', body: body };
 
@@ -34,11 +37,11 @@ class UpdateCurrencySettings {
 }
 
 
-module.exports = {
+export = {
     getSettings: () => {
         return new GetCurrencySettings();
     },
-    updateSettings: (data) => {
+    updateSettings: (data: any) => {
         return new UpdateCurrencySettings(data);
     }
 };
