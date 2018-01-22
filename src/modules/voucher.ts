@@ -1,41 +1,49 @@
-"use strict";
-const AddModule = require("./methods/add");
-const GetModule = require("./methods/get");
-const UpdateModule = require("./methods/update");
+import AddModule = require('./methods/add');
+import GetModule = require('./methods/get');
+import UpdateModule = require('./methods/update');
+import { ExecOptions } from '../shared';
+
+
 class AddVoucher extends AddModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddVoucher',
             schema: 'Voucher'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class GetVoucher extends GetModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetVoucher'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class UpdateVoucher extends UpdateModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateVoucher',
             schema: 'Voucher'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
-    add: (data) => {
+
+
+export = {
+    add: (data: any) => {
         return new AddVoucher(data);
     },
-    get: (filter) => {
+    get: (filter: any) => {
         return new GetVoucher(filter);
     },
-    update: (data) => {
+    update: (data: any) => {
         return new UpdateVoucher(data);
     }
 };

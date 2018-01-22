@@ -1,41 +1,49 @@
-"use strict";
-const AddModule = require("./methods/add");
-const GetModule = require("./methods/get");
-const UpdateModule = require("./methods/update");
+import AddModule = require('./methods/add');
+import GetModule = require('./methods/get');
+import UpdateModule = require('./methods/update');
+import { ExecOptions } from '../shared';
+
+
 class AddWarehouse extends AddModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddWarehouse',
             schema: 'Warehouse'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class GetWarehouse extends GetModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddOrder'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class UpdateWarehouse extends UpdateModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'UpdateWarehouse',
             schema: 'Warehouse'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
-    add: (data) => {
+
+
+export = {
+    add: (data: any) => {
         return new AddWarehouse(data);
     },
-    get: (filter) => {
+    get: (filter: any) => {
         return new GetWarehouse(filter);
     },
-    update: (data) => {
+    update: (data: any) => {
         return new UpdateWarehouse(data);
     }
 };

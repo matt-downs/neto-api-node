@@ -1,16 +1,19 @@
-const sharedModule = require('../shared');
+import sharedModule = require('../shared');
 
 
 class GetShippingQuote {
-    constructor(data) {
+    private data: any;
+
+    constructor(data: any) {
         return this.getQuote(data);
     }
 
-    getQuote(data) {
+    public getQuote(data: any) {
         this.data = data;
+        return this;
     }
 
-    exec({ debug = false } = {}) {
+    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
         let body = { ShippingQuote: this.data };
         let req = { action: 'GetShippingQuote', body: body };
 
@@ -25,7 +28,7 @@ class GetShippingMethods {
         return this;
     }
 
-    exec({ debug = false } = {}) {
+    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
         let req = { action: 'GetShippingMethods', body: {} };
 
         if (debug) return req;
@@ -34,11 +37,11 @@ class GetShippingMethods {
 }
 
 
-module.exports = {
+export = {
     getMethods: () => {
         return new GetShippingMethods();
     },
-    getQuote: (data) => {
+    getQuote: (data: any) => {
         return new GetShippingQuote(data);
     }
 };

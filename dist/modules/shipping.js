@@ -1,11 +1,12 @@
 "use strict";
-const sharedModule = require('../shared');
+const sharedModule = require("../shared");
 class GetShippingQuote {
     constructor(data) {
         return this.getQuote(data);
     }
     getQuote(data) {
         this.data = data;
+        return this;
     }
     exec({ debug = false } = {}) {
         let body = { ShippingQuote: this.data };

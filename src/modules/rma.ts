@@ -1,28 +1,35 @@
-"use strict";
-const AddModule = require("./methods/add");
-const GetModule = require("./methods/get");
+import AddModule = require('./methods/add');
+import GetModule = require('./methods/get');
+import UpdateModule = require('./methods/update');
+import { ExecOptions } from '../shared';
+
+
 class AddRma extends AddModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'AddRma',
             schema: 'Rma'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
+
+
 class GetRma extends GetModule {
-    exec(params = {}) {
+    public exec(params: ExecOptions = {}) {
         let superParams = {
             action: 'GetRma'
-        };
+        }
         return super.exec(Object.assign(superParams, params));
     }
 }
-module.exports = {
-    add: (data) => {
+
+
+export = {
+    add: (data: any) => {
         return new AddRma(data);
     },
-    get: (filter) => {
+    get: (filter: any) => {
         return new GetRma(filter);
     }
 };
