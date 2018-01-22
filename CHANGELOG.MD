@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.2.0] - 2018-01-22
 ### Changed
 - Entire project is now compiled from TypeScript source files. Supported editors should now show rich snippets and code completion when using the library.
+### Added
+- More unit tests
 
 ## [1.1.1] - 2018-01-02
 ### Changed
