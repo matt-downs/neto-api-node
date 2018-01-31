@@ -24,8 +24,8 @@ describe('category', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.category
+            before(async function() {
+                this.data = await this.api.category
                     .add({ CategoryName: 'test' })
                     .add([{ CategoryName: 'test2' }, { CategoryName: 'test3' }])
                     .add({ CategoryName: 'test4' })
@@ -76,8 +76,8 @@ describe('category', function() {
 
         describe('.output()', function() {
             
-            before(function() {
-                this.data = this.api.category
+            before(async function() {
+                this.data = await this.api.category
                     .get({ CategoryID: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
@@ -105,8 +105,8 @@ describe('category', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.category
+            before(async function() {
+                this.data = await this.api.category
                     .get({
                         CategoryID: 'test',
                         OutputSelector: ['test']
@@ -154,8 +154,8 @@ describe('category', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.category
+            before(async function() {
+                this.data = await this.api.category
                     .update({ CategoryID: 'test' })
                     .update([{ CategoryID: 'test2' }, { CategoryID: 'test3' }])
                     .update({ CategoryID: 'test4' })
