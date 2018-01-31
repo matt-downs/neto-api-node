@@ -24,8 +24,8 @@ describe('cart', function() {
 
         describe('.output()', function() {
 
-            before(function() {
-                this.data = this.api.cart
+            before(async function() {
+                this.data = await this.api.cart
                     .get({ CartID: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
@@ -53,8 +53,8 @@ describe('cart', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.cart
+            before(async function() {
+                this.data = await this.api.cart
                     .get({
                         CartID: 'test',
                         OutputSelector: ['test']
@@ -78,7 +78,7 @@ describe('cart', function() {
             });
 
         });
-        
+
     });
 
 });

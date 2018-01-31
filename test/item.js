@@ -24,8 +24,8 @@ describe('item', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.item
+            before(async function() {
+                this.data = await this.api.item
                     .add({ SKU: 'test' })
                     .add([{ SKU: 'test2' }, { SKU: 'test3' }])
                     .add({ SKU: 'test4' })
@@ -76,8 +76,8 @@ describe('item', function() {
 
         describe('.output()', function() {
             
-            before(function() {
-                this.data = this.api.item
+            before(async function() {
+                this.data = await this.api.item
                     .get({ SKU: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
@@ -105,8 +105,8 @@ describe('item', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.item
+            before(async function() {
+                this.data = await this.api.item
                     .get({
                         SKU: 'test',
                         OutputSelector: ['test']
@@ -154,8 +154,8 @@ describe('item', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.item
+            before(async function() {
+                this.data = await this.api.item
                     .update({ SKU: 'test' })
                     .update([{ SKU: 'test2' }, { SKU: 'test3' }])
                     .update({ SKU: 'test4' })
