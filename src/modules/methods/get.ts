@@ -24,7 +24,7 @@ export = class GetModule {
     public exec({ debug = false, action }: { debug ? : boolean, action: string }) {
         let req = { action: action, body: this.body };
 
-        if (debug) return req;
+        if (debug) return new Promise(resolve => resolve(req));
         return sharedModule.postApi(req);
     }
 }

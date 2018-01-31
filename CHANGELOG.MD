@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.1] - 2018-01-31
+### Fixed
+- TS warning property `then` does not exist on `.exec()`
+
 ## [1.2.0] - 2018-01-22
 ### Changed
 - Entire project is now compiled from TypeScript source files. Supported editors should now show rich snippets and code completion when using the library.

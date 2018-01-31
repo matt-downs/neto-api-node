@@ -24,8 +24,8 @@ describe('currency', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.currency
+            before(async function() {
+                this.data = await this.api.currency
                     .getSettings()
                     .exec({ debug: true });
             });
@@ -61,8 +61,8 @@ describe('currency', function() {
 
         describe('request', function() {
 
-            before(function() {
-                this.data = this.api.currency
+            before(async function() {
+                this.data = await this.api.currency
                     .updateSettings({ DEFAULTCOUNTRY: 'test' })
                     .exec({ debug: true });
             });
