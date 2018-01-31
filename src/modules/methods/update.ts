@@ -24,7 +24,7 @@ export = class UpdateModule {
         body[schema] = this.data;
         let req = { action: action, body: body };
 
-        if (debug) return req;
+        if (debug) return new Promise(resolve => resolve(req));
         return sharedModule.postApi(req);
     }
 }
