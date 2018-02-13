@@ -5,15 +5,7 @@ describe('category', function() {
 
     describe('.add()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.category.add, Joi.func().required());
-        });
-
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.category.add().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.category.add().exec().then, Joi.func()
@@ -56,16 +48,8 @@ describe('category', function() {
     });
 
     describe('.get()', function() {
-
-        it('should be a function', function() {
-            Joi.assert(this.api.category.get, Joi.func().required());
-        });
     
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.category.get().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.category.get().exec().then, Joi.func()
@@ -81,10 +65,6 @@ describe('category', function() {
                     .get({ CategoryID: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
-            });
-
-            it('should be a function', function() {
-                Joi.assert(this.api.category.get().output, Joi.func().required());
             });
 
             it('should add the array param to the OutputSelector key',
@@ -134,16 +114,8 @@ describe('category', function() {
     });
 
     describe('.update()', function() {
-
-        it('should be a function', function() {
-            Joi.assert(this.api.category.update, Joi.func().required());
-        });
         
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.category.update().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.category.update().exec().then, Joi.func()

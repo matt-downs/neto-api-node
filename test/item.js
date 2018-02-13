@@ -5,15 +5,7 @@ describe('item', function() {
 
     describe('.add()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.item.add, Joi.func().required());
-        });
-
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.add().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.item.add().exec().then, Joi.func()
@@ -56,16 +48,8 @@ describe('item', function() {
     });
 
     describe('.get()', function() {
-
-        it('should be a function', function() {
-            Joi.assert(this.api.item.get, Joi.func().required());
-        });
     
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.get().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.item.get().exec().then, Joi.func()
@@ -81,10 +65,6 @@ describe('item', function() {
                     .get({ SKU: 'test' })
                     .output(['test1', 'test2'])
                     .exec({ debug: true });
-            });
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.get().output, Joi.func().required());
             });
 
             it('should add the array param to the OutputSelector key',
@@ -134,16 +114,8 @@ describe('item', function() {
     });
 
     describe('.update()', function() {
-
-        it('should be a function', function() {
-            Joi.assert(this.api.item.update, Joi.func().required());
-        });
         
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.update().exec, Joi.func().required());
-            });
 
             it('should return a promise', function() {
                 Joi.assert(this.api.item.update().exec().then, Joi.func()
