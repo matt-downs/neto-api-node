@@ -18,7 +18,7 @@ export class AddWarehouse extends AddModule {
 export class GetWarehouse extends GetModule {
     public exec(params: ExecOptions = {}) {
         let superParams = {
-            action: 'AddOrder'
+            action: 'GetWarehouse'
         }
         return super.exec(Object.assign(superParams, params));
     }
