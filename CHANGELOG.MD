@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Updated TypeScript and @types packages
+- Updated tests for 100% coverage of `/modules`
 
 ## [1.2.1] - 2018-01-31
 ### Fixed

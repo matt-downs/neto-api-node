@@ -8,8 +8,7 @@ describe('currency', function() {
         describe('.exec()', function() {
 
             it('should return a promise', function() {
-                Joi.assert(this.api.currency.getSettings().exec().then, Joi.func()
-                    .required());
+                Joi.assert(this.api.currency.getSettings().exec().then, Joi.func().required());
             });
 
         })
@@ -37,8 +36,7 @@ describe('currency', function() {
         describe('.exec()', function() {
 
             it('should return a promise', function() {
-                Joi.assert(this.api.currency.updateSettings().exec().then, Joi.func()
-                    .required());
+                Joi.assert(this.api.currency.updateSettings().exec().then, Joi.func().required());
             });
 
         })
