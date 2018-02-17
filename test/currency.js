@@ -5,19 +5,10 @@ describe('currency', function() {
 
     describe('.getSettings()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.currency.getSettings, Joi.func().required());
-        });
-
         describe('.exec()', function() {
 
-            it('should be a function', function() {
-                Joi.assert(this.api.currency.getSettings().exec, Joi.func().required());
-            });
-
             it('should return a promise', function() {
-                Joi.assert(this.api.currency.getSettings().exec().then, Joi.func()
-                    .required());
+                Joi.assert(this.api.currency.getSettings().exec().then, Joi.func().required());
             });
 
         })
@@ -41,20 +32,11 @@ describe('currency', function() {
 
 
     describe('.updateSettings()', function() {
-
-        it('should be a function', function() {
-            Joi.assert(this.api.currency.updateSettings, Joi.func().required());
-        });
         
         describe('.exec()', function() {
 
-            it('should be a function', function() {
-                Joi.assert(this.api.currency.updateSettings().exec, Joi.func().required());
-            });
-
             it('should return a promise', function() {
-                Joi.assert(this.api.currency.updateSettings().exec().then, Joi.func()
-                    .required());
+                Joi.assert(this.api.currency.updateSettings().exec().then, Joi.func().required());
             });
 
         })

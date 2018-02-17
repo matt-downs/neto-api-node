@@ -5,31 +5,18 @@ describe('item', function() {
 
     describe('.add()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.item.add, Joi.func().required());
-        });
-
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.add().exec, Joi.func().required());
-            });
-
-            it('should return a promise', function() {
-                Joi.assert(this.api.item.add().exec().then, Joi.func()
-                    .required());
-            });
-
-        })
-
-        describe('request', function() {
 
             before(async function() {
                 this.data = await this.api.item
-                    .add({ SKU: 'test' })
-                    .add([{ SKU: 'test2' }, { SKU: 'test3' }])
-                    .add({ SKU: 'test4' })
+                    .add({ Name: 'test' })
+                    .add([{ Name: 'test2' }, { Name: 'test3' }])
+                    .add({ Name: 'test4' })
                     .exec({ debug: true });
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.add().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
@@ -39,79 +26,34 @@ describe('item', function() {
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array().required()
+                    Item: Joi.array().required().length(4).items(
+                        Joi.object().required().keys({
+                            Name: Joi.string().required()
+                        })
+                    )
                 };
                 Joi.assert(this.data.body, schema);
             });
 
-            it('should contain the correct number of items', function() {
-                let schema = {
-                    Item: Joi.array().length(4)
-                };
-                Joi.assert(this.data.body, schema);
-            });
-
-        });
+        })
 
     });
 
     describe('.get()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.item.get, Joi.func().required());
-        });
-    
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.get().exec, Joi.func().required());
-            });
-
-            it('should return a promise', function() {
-                Joi.assert(this.api.item.get().exec().then, Joi.func()
-                    .required());
-            });
-
-        })
-
-        describe('.output()', function() {
-            
-            before(async function() {
-                this.data = await this.api.item
-                    .get({ SKU: 'test' })
-                    .output(['test1', 'test2'])
-                    .exec({ debug: true });
-            });
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.get().output, Joi.func().required());
-            });
-
-            it('should add the array param to the OutputSelector key',
-                function() {
-                    let schema = {
-                        Filter: {
-                            SKU: Joi.string(),
-                            OutputSelector: Joi.array().items(
-                                Joi.string().valid('test1'),
-                                Joi.string().valid('test2')
-                            ).required()
-                        }
-                    };
-                    Joi.assert(this.data.body, schema);
-                });
-
-        });
-
-        describe('request', function() {
 
             before(async function() {
                 this.data = await this.api.item
                     .get({
-                        SKU: 'test',
-                        OutputSelector: ['test']
+                        ID: 'test'
                     })
+                    .output(['test1', 'test2'])
                     .exec({ debug: true });
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
@@ -122,8 +64,11 @@ describe('item', function() {
             it('should fit the correct body schema', function() {
                 let schema = {
                     Filter: {
-                        SKU: Joi.string(),
-                        OutputSelector: Joi.array().required()
+                        ID: Joi.string().valid('test').required(),
+                        OutputSelector: Joi.array().required().items(
+                            Joi.string().valid('test1').required(),
+                            Joi.string().valid('test2').required()
+                        )
                     }
                 };
                 Joi.assert(this.data.body, schema);
@@ -135,31 +80,18 @@ describe('item', function() {
 
     describe('.update()', function() {
 
-        it('should be a function', function() {
-            Joi.assert(this.api.item.update, Joi.func().required());
-        });
-        
         describe('.exec()', function() {
-
-            it('should be a function', function() {
-                Joi.assert(this.api.item.update().exec, Joi.func().required());
-            });
-
-            it('should return a promise', function() {
-                Joi.assert(this.api.item.update().exec().then, Joi.func()
-                    .required());
-            });
-
-        })
-
-        describe('request', function() {
 
             before(async function() {
                 this.data = await this.api.item
-                    .update({ SKU: 'test' })
-                    .update([{ SKU: 'test2' }, { SKU: 'test3' }])
-                    .update({ SKU: 'test4' })
+                    .update({ Name: 'test' })
+                    .update([{ Name: 'test2' }, { Name: 'test3' }])
+                    .update({ Name: 'test4' })
                     .exec({ debug: true });
+            });
+
+            it('should return a promise', function() {
+                Joi.assert(this.api.item.update().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
@@ -169,19 +101,16 @@ describe('item', function() {
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array().required()
+                    Item: Joi.array().required().length(4).items(
+                        Joi.object().required().keys({
+                            Name: Joi.string().required()
+                        })
+                    )
                 };
                 Joi.assert(this.data.body, schema);
             });
 
-            it('should contain the correct number of items', function() {
-                let schema = {
-                    Item: Joi.array().length(4)
-                };
-                Joi.assert(this.data.body, schema);
-            });
-
-        });
+        })
 
     });
 
