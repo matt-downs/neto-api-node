@@ -10,6 +10,21 @@ export interface InitOptions {
     user?: string;
 }
 
+// TODO verify and implment this
+export interface IResponseBody {
+    Messages: {
+        Error: [{
+            Message: string;
+            SeverityCode: string;
+            Description: string;
+        }];
+        Warning: [{
+            Message: string;
+            SeverityCode: string;
+        }];
+    };
+}
+
 let requestOptions: (request.UriOptions & request.CoreOptions) | (request.UrlOptions & request.CoreOptions);
 
 export function init(config: InitOptions) {
