@@ -12,8 +12,8 @@ const Neto = require('neto-api');
 
 const mySite = new Neto({
     url: 'https://myawesomesite.neto.com.au',
-    user: 'user', // optional
-    key: 'api-key'
+    key: 'api-key',
+    user: 'user' // optional
 });
 ```
 
@@ -22,9 +22,11 @@ const mySite = new Neto({
 Once the library is initialised, you can use it like so:
 ```javascript
 mySite
-    .[type]     // See below for a list of supported types
-    .[method]() // See below for a list of methods for each type (generally add, get or update)
-    .exec()     // Returns a promise that resolves with the API response in JSON format
+    .type           // See below for a list of supported types
+    .method()       // See below for a list of methods for each type (generally add, get or update)
+    .exec()         // Returns a promise that resolves with the API response in JSON format
+    .then(response) // Response object is returned via callback
+    .catch(err)     // Always handle your errors ;) 
 ```
 [Supported types and methods](#supported-types-and-methods)
 
@@ -38,7 +40,7 @@ mySite.item
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 ### order.get
 ```javascript
@@ -51,7 +53,7 @@ mySite.order
             console.log(order);
         }
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 ### customer.update
 ```javascript
@@ -61,7 +63,7 @@ mySite.customer
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 
 
@@ -77,7 +79,7 @@ mySite.item
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 This allows you to some other cool stuff, such as building a bulk request to execute at some time in the future:
 ```javascript
@@ -95,7 +97,7 @@ addItems.exec()
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 Chaining `.get()` methods will be supported soon, I promise.
 
@@ -107,7 +109,7 @@ async function addItem() {
         var response = mySite.item.add({ SKU: 'smp_1' }).exec();
         // Do some stuff...
         console.log(await response);
-    } catch (e) console.log(e)
+    } catch (err) { console.log(err); }
 }
 addItem();
 ```
