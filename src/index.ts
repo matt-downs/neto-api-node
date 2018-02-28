@@ -15,7 +15,7 @@ import warehouseModule = require("./modules/warehouse");
 
 import sharedModule = require("./shared");
 
-export = class Neto {
+export class Neto {
     public item = itemModule.methods;
     public order = orderModule.methods;
     public customer = customerModule.methods;
