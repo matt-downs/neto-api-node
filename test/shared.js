@@ -1,4 +1,4 @@
-const Neto = require('../dist/index');
+const { NetoAPI } = require('../dist/index');
 const assert = require('assert');
 
 
@@ -6,7 +6,7 @@ describe('initialiser', function() {
 
     it('should throw exception if key is missing from config', function() {
         const myFunction = () => {
-            new Neto({
+            new NetoAPI({
                 url: 'https://someurl.com'
             });
         };
@@ -15,7 +15,7 @@ describe('initialiser', function() {
 
     it('should throw exception if url is missing from config', function() {
         const myFunction = () => {
-            new Neto({
+            new NetoAPI({
                 key: 'somekey'
             });
         };
