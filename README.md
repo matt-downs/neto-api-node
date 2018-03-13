@@ -5,12 +5,26 @@ A promise based Neto API client for Node - built in TypeScript and compiled to J
 ### `npm install neto-api`
 
 
+## Breaking changes in 2.0.0
+You will no longer be able to import the module using it's default namespace - imports of this module will need to be changed to the following syntax:
+```javascript
+const neto = require('neto-api');
+const mySite = new neto.NetoAPI({...});
+// or
+const { NetoAPI } = require('neto-api');
+const mySite = new NetoAPI({...});
+// or
+import { NetoAPI } from 'neto-api';
+const mySite = new NetoAPI({...});
+```
+
+
 ## Initialisation
 Before you start making calls, you will need to initialise the API like so:
 ```javascript
-const Neto = require('neto-api');
+const { NetoAPI } = require('neto-api');
 
-const mySite = new Neto({
+const mySite = new NetoAPI({
     url: 'https://myawesomesite.neto.com.au',
     key: 'api-key',
     user: 'user' // optional
