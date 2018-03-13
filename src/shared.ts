@@ -13,8 +13,8 @@ export interface InitOptions {
 let requestOptions: (request.UriOptions & request.CoreOptions) | (request.UrlOptions & request.CoreOptions);
 
 export function init(config: InitOptions) {
-    if (!config.url) { throw "URL must be specified"; }
-    if (!config.key) { throw "Key must be specified"; }
+    if (!config.url) { throw new Error("url must be specified"); }
+    if (!config.key) { throw new Error("key must be specified"); }
 
     requestOptions = {
         headers: {
