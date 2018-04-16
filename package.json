@@ -5,11 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "pretest": "npm run build",
-    "test": "nyc mocha --timeout=3000",
-    "posttest": "rimraf .nyc_output",
-    "prebuild": "rimraf dist",
-    "build": "tsc",
+    "test": "npm run build && nyc mocha --timeout=3000",
+    "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build",
     "lint": "tslint 'src/**/*.ts'"
   },
