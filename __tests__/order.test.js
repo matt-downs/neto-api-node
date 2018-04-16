@@ -1,14 +1,22 @@
 const Joi = require('Joi');
+const { setup } = require('./main.test.js');
 
 
-describe('item', function() {
+let api;
+beforeAll(function() {
+    api = setup();
+});
+
+
+describe('order', function() {
 
     describe('.add()', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.item
+            let req;
+            beforeAll(async function() {
+                req = await api.order
                     .add({ Name: 'test' })
                     .add([{ Name: 'test2' }, { Name: 'test3' }])
                     .add({ Name: 'test4' })
@@ -16,23 +24,23 @@ describe('item', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.item.add().exec().then, Joi.func().required());
+                Joi.assert(api.order.add().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('AddItem').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('AddOrder').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array().required().length(4).items(
+                    Order: Joi.array().required().length(4).items(
                         Joi.object().required().keys({
                             Name: Joi.string().required()
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })
@@ -43,8 +51,9 @@ describe('item', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.item
+            let req;
+            beforeAll(async function() {
+                req = await api.order
                     .get({
                         ID: 'test'
                     })
@@ -53,12 +62,12 @@ describe('item', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.item.get().exec().then, Joi.func().required());
+                Joi.assert(api.order.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('GetItem').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('GetOrder').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -71,7 +80,7 @@ describe('item', function() {
                         )
                     }
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         });
@@ -82,8 +91,9 @@ describe('item', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.item
+            let req;
+            beforeAll(async function() {
+                req = await api.order
                     .update({ Name: 'test' })
                     .update([{ Name: 'test2' }, { Name: 'test3' }])
                     .update({ Name: 'test4' })
@@ -91,23 +101,23 @@ describe('item', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.item.update().exec().then, Joi.func().required());
+                Joi.assert(api.order.update().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('UpdateItem').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('UpdateOrder').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Item: Joi.array().required().length(4).items(
+                    Order: Joi.array().required().length(4).items(
                         Joi.object().required().keys({
                             Name: Joi.string().required()
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })

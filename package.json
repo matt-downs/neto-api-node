@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "npm run build && nyc mocha --timeout=3000",
+    "test": "npm run build && jest --coverage",
     "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build",
     "lint": "tslint 'src/**/*.ts'"
@@ -25,9 +25,8 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
+    "jest": "^22.4.3",
     "joi": "^13.0.2",
-    "mocha": "^4.1.0",
-    "nyc": "^11.4.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.9.1",
     "typescript": "^2.7.1"
