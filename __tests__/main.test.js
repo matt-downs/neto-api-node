@@ -2,6 +2,15 @@ const { NetoAPI } = require('../dist/index');
 const assert = require('assert');
 
 
+module.exports.setup = () => {
+    return new NetoAPI({
+        url: 'https://someurl.com',
+        user: 'someuser',
+        key: 'somekey'
+    });
+}
+
+
 describe('initialiser', function() {
 
     it('should throw exception if key is missing from config', function() {
