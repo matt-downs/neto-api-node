@@ -37,6 +37,7 @@ export function postApi({ action, body }: { action: string, body: any }): Promis
     return new Promise((resolve, reject) => {
         request.post(options, (error, response, responseBody) => {
             // Catch any errors
+            if (error) { return reject(error); }
             if (responseBody.Ack !== "Success") { return reject(responseBody.Messages); }
 
             resolve(responseBody);
