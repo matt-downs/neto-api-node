@@ -1,14 +1,22 @@
 const Joi = require('Joi');
+const { setup } = require('./main.test.js');
 
 
-describe('category', function() {
+let api;
+beforeAll(function() {
+    api = setup();
+});
+
+
+describe('payment', function() {
 
     describe('.add()', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.category
+            let req;
+            beforeAll(async function() {
+                req = await api.payment
                     .add({ Name: 'test' })
                     .add([{ Name: 'test2' }, { Name: 'test3' }])
                     .add({ Name: 'test4' })
@@ -16,23 +24,23 @@ describe('category', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.category.add().exec().then, Joi.func().required());
+                Joi.assert(api.payment.add().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('AddCategory').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('AddPayment').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Category: Joi.array().required().length(4).items(
+                    Payment: Joi.array().required().length(4).items(
                         Joi.object().required().keys({
                             Name: Joi.string().required()
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })
@@ -43,8 +51,9 @@ describe('category', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.category
+            let req;
+            beforeAll(async function() {
+                req = await api.payment
                     .get({
                         ID: 'test'
                     })
@@ -53,12 +62,12 @@ describe('category', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.category.get().exec().then, Joi.func().required());
+                Joi.assert(api.payment.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('GetCategory').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('GetPayment').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -71,46 +80,39 @@ describe('category', function() {
                         )
                     }
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         });
 
     });
 
-    describe('.update()', function() {
+    describe('.getMethods()', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.category
-                    .update({ Name: 'test' })
-                    .update([{ Name: 'test2' }, { Name: 'test3' }])
-                    .update({ Name: 'test4' })
+            let req;
+            beforeAll(async function() {
+                req = await api.payment
+                    .getMethods()
                     .exec({ debug: true });
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.category.update().exec().then, Joi.func().required());
+                Joi.assert(api.payment.getMethods().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('UpdateCategory').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('GetPaymentMethods').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
-                let schema = {
-                    Category: Joi.array().required().length(4).items(
-                        Joi.object().required().keys({
-                            Name: Joi.string().required()
-                        })
-                    )
-                };
-                Joi.assert(this.data.body, schema);
+                let schema = {};
+                Joi.assert(req.body, schema);
             });
 
-        })
+        });
 
     });
 

@@ -1,19 +1,36 @@
 # neto-api
-A promise based Neto API client for Node - built in TypeScript and compiled to JavaScript.
+A promise based Neto API client for Node.js - built in TypeScript.
 
 
-### `npm install neto-api`
+### `npm i neto-api`
+
+
+## Breaking changes in 2.0.0
+You will no longer be able to import the module using it's default namespace - imports of this module will need to be changed to the following syntax:
+```javascript
+// ES6 import
+const { NetoAPI } = require('neto-api');
+const mySite = new NetoAPI({...});
+
+// TypeScript import
+import { NetoAPI } from 'neto-api';
+const mySite = new NetoAPI({...});
+
+// Older syntax
+var neto = require('neto-api');
+var mySite = new neto.NetoAPI({...});
+```
 
 
 ## Initialisation
 Before you start making calls, you will need to initialise the API like so:
 ```javascript
-const Neto = require('neto-api');
+const { NetoAPI } = require('neto-api');
 
-const mySite = new Neto({
+const mySite = new NetoAPI({
     url: 'https://myawesomesite.neto.com.au',
-    user: 'user', // optional
-    key: 'api-key'
+    key: 'api-key',
+    user: 'user' // optional
 });
 ```
 
@@ -22,9 +39,11 @@ const mySite = new Neto({
 Once the library is initialised, you can use it like so:
 ```javascript
 mySite
-    .[type]     // See below for a list of supported types
-    .[method]() // See below for a list of methods for each type (generally add, get or update)
-    .exec()     // Returns a promise that resolves with the API response in JSON format
+    .type           // See below for a list of supported types
+    .method()       // See below for a list of methods for each type (generally add, get or update)
+    .exec()         // Returns a promise that resolves with the API response in JSON format
+    .then(response) // Response object is returned via callback
+    .catch(err)     // Always handle your errors ;) 
 ```
 [Supported types and methods](#supported-types-and-methods)
 
@@ -38,7 +57,7 @@ mySite.item
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 ### order.get
 ```javascript
@@ -51,7 +70,7 @@ mySite.order
             console.log(order);
         }
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 ### customer.update
 ```javascript
@@ -61,7 +80,7 @@ mySite.customer
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 
 
@@ -77,7 +96,7 @@ mySite.item
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 This allows you to some other cool stuff, such as building a bulk request to execute at some time in the future:
 ```javascript
@@ -95,7 +114,7 @@ addItems.exec()
     .then((response) => {
         console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((err) => console.log(err));
 ```
 Chaining `.get()` methods will be supported soon, I promise.
 
@@ -107,7 +126,7 @@ async function addItem() {
         var response = mySite.item.add({ SKU: 'smp_1' }).exec();
         // Do some stuff...
         console.log(await response);
-    } catch (e) console.log(e)
+    } catch (err) { console.log(err); }
 }
 addItem();
 ```

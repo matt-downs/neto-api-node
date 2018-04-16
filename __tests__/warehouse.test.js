@@ -1,14 +1,22 @@
 const Joi = require('Joi');
+const { setup } = require('./main.test.js');
 
 
-describe('supplier', function() {
+let api;
+beforeAll(function() {
+    api = setup();
+});
+
+
+describe('warehouse', function() {
 
     describe('.add()', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.supplier
+            let req;
+            beforeAll(async function() {
+                req = await api.warehouse
                     .add({ Name: 'test' })
                     .add([{ Name: 'test2' }, { Name: 'test3' }])
                     .add({ Name: 'test4' })
@@ -16,23 +24,23 @@ describe('supplier', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.supplier.add().exec().then, Joi.func().required());
+                Joi.assert(api.warehouse.add().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('AddSupplier').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('AddWarehouse').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Supplier: Joi.array().required().length(4).items(
+                    Warehouse: Joi.array().required().length(4).items(
                         Joi.object().required().keys({
                             Name: Joi.string().required()
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })
@@ -43,8 +51,9 @@ describe('supplier', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.supplier
+            let req;
+            beforeAll(async function() {
+                req = await api.warehouse
                     .get({
                         ID: 'test'
                     })
@@ -53,12 +62,12 @@ describe('supplier', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.supplier.get().exec().then, Joi.func().required());
+                Joi.assert(api.warehouse.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('GetSupplier').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('GetWarehouse').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -71,7 +80,7 @@ describe('supplier', function() {
                         )
                     }
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         });
@@ -82,8 +91,9 @@ describe('supplier', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.supplier
+            let req;
+            beforeAll(async function() {
+                req = await api.warehouse
                     .update({ Name: 'test' })
                     .update([{ Name: 'test2' }, { Name: 'test3' }])
                     .update({ Name: 'test4' })
@@ -91,23 +101,23 @@ describe('supplier', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.supplier.update().exec().then, Joi.func().required());
+                Joi.assert(api.warehouse.update().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
-                let schema = Joi.string().valid('UpdateSupplier').required();
-                Joi.assert(this.data.action, schema);
+                let schema = Joi.string().valid('UpdateWarehouse').required();
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
                 let schema = {
-                    Supplier: Joi.array().required().length(4).items(
+                    Warehouse: Joi.array().required().length(4).items(
                         Joi.object().required().keys({
                             Name: Joi.string().required()
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })

@@ -1,4 +1,11 @@
 const Joi = require('Joi');
+const { setup } = require('./main.test.js');
+
+
+let api;
+beforeAll(function() {
+    api = setup();
+});
 
 
 describe('rma', function() {
@@ -7,8 +14,9 @@ describe('rma', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.rma
+            let req;
+            beforeAll(async function() {
+                req = await api.rma
                     .add({ Name: 'test' })
                     .add([{ Name: 'test2' }, { Name: 'test3' }])
                     .add({ Name: 'test4' })
@@ -16,12 +24,12 @@ describe('rma', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.rma.add().exec().then, Joi.func().required());
+                Joi.assert(api.rma.add().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
                 let schema = Joi.string().valid('AddRma').required();
-                Joi.assert(this.data.action, schema);
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -32,7 +40,7 @@ describe('rma', function() {
                         })
                     )
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         })
@@ -43,8 +51,9 @@ describe('rma', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.rma
+            let req;
+            beforeAll(async function() {
+                req = await api.rma
                     .get({
                         ID: 'test'
                     })
@@ -53,12 +62,12 @@ describe('rma', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.rma.get().exec().then, Joi.func().required());
+                Joi.assert(api.rma.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
                 let schema = Joi.string().valid('GetRma').required();
-                Joi.assert(this.data.action, schema);
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -71,7 +80,7 @@ describe('rma', function() {
                         )
                     }
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         });

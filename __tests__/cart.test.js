@@ -1,4 +1,11 @@
 const Joi = require('Joi');
+const { setup } = require('./main.test.js');
+
+
+let api;
+beforeAll(function() {
+    api = setup();
+});
 
 
 describe('cart', function() {
@@ -7,8 +14,9 @@ describe('cart', function() {
 
         describe('.exec()', function() {
 
-            before(async function() {
-                this.data = await this.api.cart
+            let req;
+            beforeAll(async function() {
+                req = await api.cart
                     .get({
                         ID: 'test'
                     })
@@ -17,12 +25,12 @@ describe('cart', function() {
             });
 
             it('should return a promise', function() {
-                Joi.assert(this.api.cart.get().exec().then, Joi.func().required());
+                Joi.assert(api.cart.get().exec().then, Joi.func().required());
             });
 
             it('should contain the correct API action', function() {
                 let schema = Joi.string().valid('GetCart').required();
-                Joi.assert(this.data.action, schema);
+                Joi.assert(req.action, schema);
             });
 
             it('should fit the correct body schema', function() {
@@ -35,7 +43,7 @@ describe('cart', function() {
                         )
                     }
                 };
-                Joi.assert(this.data.body, schema);
+                Joi.assert(req.body, schema);
             });
 
         });
