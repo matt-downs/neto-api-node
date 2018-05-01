@@ -33,4 +33,4 @@ export class NetoAPI {
     constructor(options: sharedModule.InitOptions) {
         sharedModule.init(options);
     }
-};
+}
