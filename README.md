@@ -1,4 +1,8 @@
 # neto-api
+[![npm](https://img.shields.io/npm/dm/neto-api.svg)](https://www.npmjs.com/package/neto-api)
+[![npm](https://img.shields.io/npm/v/neto-api.svg)](https://www.npmjs.com/package/neto-api)
+
+
 A promise based client for the Neto Ecommerce API. 
 
 
