@@ -1,7 +1,12 @@
 {
   "name": "neto-api",
-  "version": "2.0.0",
-  "description": "A promise based Neto API client for Node",
+  "version": "2.0.1",
+  "description": "A promise based client for the Neto Ecommerce API.",
+  "keywords": [
+    "neto",
+    "ecommerce",
+    "api"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -22,13 +27,13 @@
   "homepage": "https://github.com/matt-downs/neto-api-node#readme",
   "dependencies": {
     "@types/request": "^2.47.0",
-    "request": "^2.83.0"
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "jest": "^22.4.3",
-    "joi": "^13.0.2",
+    "joi": "^13.2.0",
     "rimraf": "^2.6.2",
     "tslint": "^5.9.1",
-    "typescript": "^2.7.1"
+    "typescript": "^2.8.3"
   }
 }
