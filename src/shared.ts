@@ -30,9 +30,14 @@ export function init(config: InitOptions) {
 }
 
 export function postApi({ action, body }: { action: string, body: any }): Promise < any > {
-    let options = Object.assign({}, requestOptions);
-    options.headers!.NETOAPI_ACTION = action;
-    options.body = body;
+    let options = {
+        ...requestOptions,
+        headers: {
+            ...requestOptions.headers,
+            NETOAPI_ACTION: action
+        },
+        body: body
+    };
 
     return new Promise((resolve, reject) => {
         request.post(options, (error, response, responseBody) => {
