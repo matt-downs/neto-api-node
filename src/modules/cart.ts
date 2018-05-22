@@ -1,4 +1,4 @@
-import GetModule = require("./methods/get");
+import GetModule from "./methods/get";
 import { ExecOptions } from "../shared";
 
 export class GetCart extends GetModule {

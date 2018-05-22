@@ -1,4 +1,4 @@
-import request = require("request");
+import { post, UriOptions, UrlOptions, CoreOptions } from "request";
 
 export interface ExecOptions {
   debug?: boolean;
@@ -10,9 +10,7 @@ export interface InitOptions {
   user?: string;
 }
 
-let requestOptions:
-  | (request.UriOptions & request.CoreOptions)
-  | (request.UrlOptions & request.CoreOptions);
+let requestOptions: (UriOptions & CoreOptions) | (UrlOptions & CoreOptions);
 
 export function init(config: InitOptions) {
   if (!config.url) {
@@ -54,7 +52,7 @@ export function postApi({
   };
 
   return new Promise((resolve, reject) => {
-    request.post(options, (error, response, responseBody) => {
+    post(options, (error, response, responseBody) => {
       // Catch any errors
       if (error) {
         return reject(error);

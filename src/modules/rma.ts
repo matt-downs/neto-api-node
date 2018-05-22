@@ -1,7 +1,7 @@
 import { ExecOptions } from "../shared";
-import AddModule = require("./methods/add");
-import GetModule = require("./methods/get");
-import UpdateModule = require("./methods/update");
+import AddModule from "./methods/add";
+import GetModule from "./methods/get";
+import UpdateModule from "./methods/update";
 
 export class AddRma extends AddModule {
   public exec(params: ExecOptions = {}) {

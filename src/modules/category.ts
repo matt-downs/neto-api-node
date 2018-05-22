@@ -1,6 +1,6 @@
-import AddModule = require("./methods/add");
-import GetModule = require("./methods/get");
-import UpdateModule = require("./methods/update");
+import AddModule from "./methods/add";
+import GetModule from "./methods/get";
+import UpdateModule from "./methods/update";
 import { ExecOptions } from "../shared";
 
 export class AddCategory extends AddModule {

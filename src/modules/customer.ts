@@ -1,10 +1,10 @@
-import sharedModule = require("../shared");
-import AddModule = require("./methods/add");
-import GetModule = require("./methods/get");
-import UpdateModule = require("./methods/update");
+import { postApi, ExecOptions } from "../shared";
+import AddModule from "./methods/add";
+import GetModule from "./methods/get";
+import UpdateModule from "./methods/update";
 
 export class AddCustomer extends AddModule {
-  public exec(params: sharedModule.ExecOptions = {}) {
+  public exec(params: ExecOptions = {}) {
     return super.exec({
       ...params,
       action: "AddCustomer",
@@ -14,7 +14,7 @@ export class AddCustomer extends AddModule {
 }
 
 export class GetCustomer extends GetModule {
-  public exec(params: sharedModule.ExecOptions = {}) {
+  public exec(params: ExecOptions = {}) {
     return super.exec({
       ...params,
       action: "GetCustomer"
@@ -23,7 +23,7 @@ export class GetCustomer extends GetModule {
 }
 
 export class UpdateCustomer extends UpdateModule {
-  public exec(params: sharedModule.ExecOptions = {}) {
+  public exec(params: ExecOptions = {}) {
     return super.exec({
       ...params,
       action: "UpdateCustomer",
@@ -45,7 +45,7 @@ export class AddCustomerLog {
     return this;
   }
 
-  public exec({ debug = false }: sharedModule.ExecOptions = {}) {
+  public exec({ debug = false }: ExecOptions = {}) {
     let body = {
       CustomerLogs: {
         CustomerLog: this.addModule.data
@@ -54,7 +54,7 @@ export class AddCustomerLog {
     let req = { action: "AddCustomerLog", body: body };
 
     if (debug) return req;
-    return sharedModule.postApi(req);
+    return postApi(req);
   }
 }
 
@@ -71,7 +71,7 @@ export class UpdateCustomerLog {
     return this;
   }
 
-  public exec({ debug = false }: sharedModule.ExecOptions = {}) {
+  public exec({ debug = false }: ExecOptions = {}) {
     let body = {
       CustomerLogs: {
         CustomerLog: this.updateModule.data
@@ -80,7 +80,7 @@ export class UpdateCustomerLog {
     let req = { action: "UpdateCustomerLog", body: body };
 
     if (debug) return req;
-    return sharedModule.postApi(req);
+    return postApi(req);
   }
 }
 

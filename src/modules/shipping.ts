@@ -1,4 +1,4 @@
-import sharedModule = require("../shared");
+import { postApi, ExecOptions } from "../shared";
 
 export class GetShippingQuote {
   private data: any;
@@ -12,12 +12,12 @@ export class GetShippingQuote {
     return this;
   }
 
-  public exec({ debug = false }: sharedModule.ExecOptions = {}) {
+  public exec({ debug = false }: ExecOptions = {}) {
     let body = { ShippingQuote: this.data };
     let req = { action: "GetShippingQuote", body: body };
 
     if (debug) return req;
-    return sharedModule.postApi(req);
+    return postApi(req);
   }
 }
 
@@ -26,11 +26,11 @@ export class GetShippingMethods {
     return this;
   }
 
-  public exec({ debug = false }: sharedModule.ExecOptions = {}) {
+  public exec({ debug = false }: ExecOptions = {}) {
     let req = { action: "GetShippingMethods", body: {} };
 
     if (debug) return req;
-    return sharedModule.postApi(req);
+    return postApi(req);
   }
 }
 
