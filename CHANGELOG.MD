@@ -6,8 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 ### Changed
-- Update .npmignore
+- Updated .npmignore
 - Updated dependencies
+- Updated code to use spread operator where possible
+- Updated code to use es6 imports
 
 ## [2.0.2] - 2018-05-05
 ### Changed
