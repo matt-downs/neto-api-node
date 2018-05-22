@@ -1,47 +1,44 @@
-import sharedModule = require('../shared');
-
+import { postApi, ExecOptions } from "../shared";
 
 export class GetShippingQuote {
-    private data: any;
+  private data: any;
 
-    constructor(data: any) {
-        return this.getQuote(data);
-    }
+  constructor(data: any) {
+    return this.getQuote(data);
+  }
 
-    public getQuote(data: any) {
-        this.data = data;
-        return this;
-    }
+  public getQuote(data: any) {
+    this.data = data;
+    return this;
+  }
 
-    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
-        let body = { ShippingQuote: this.data };
-        let req = { action: 'GetShippingQuote', body: body };
+  public exec({ debug = false }: ExecOptions = {}) {
+    let body = { ShippingQuote: this.data };
+    let req = { action: "GetShippingQuote", body: body };
 
-        if (debug) return req;
-        return sharedModule.postApi(req);
-    }
+    if (debug) return req;
+    return postApi(req);
+  }
 }
-
 
 export class GetShippingMethods {
-    constructor() {
-        return this;
-    }
+  constructor() {
+    return this;
+  }
 
-    public exec({ debug = false }: sharedModule.ExecOptions = {}) {
-        let req = { action: 'GetShippingMethods', body: {} };
+  public exec({ debug = false }: ExecOptions = {}) {
+    let req = { action: "GetShippingMethods", body: {} };
 
-        if (debug) return req;
-        return sharedModule.postApi(req);
-    }
+    if (debug) return req;
+    return postApi(req);
+  }
 }
 
-
 export const methods = {
-    getMethods: () => {
-        return new GetShippingMethods();
-    },
-    getQuote: (data: any) => {
-        return new GetShippingQuote(data);
-    }
+  getMethods: () => {
+    return new GetShippingMethods();
+  },
+  getQuote: (data: any) => {
+    return new GetShippingQuote(data);
+  }
 };
