@@ -1,6 +1,6 @@
 {
   "name": "neto-api",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A promise based client for the Neto Ecommerce API.",
   "keywords": [
     "neto",
