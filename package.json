@@ -26,14 +26,14 @@
   },
   "homepage": "https://github.com/matt-downs/neto-api-node#readme",
   "dependencies": {
-    "@types/request": "^2.47.0",
-    "request": "^2.87.0"
+    "@types/request": "^2.48.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
-    "jest": "^22.4.3",
-    "joi": "^13.3.0",
+    "jest": "^23.6.0",
+    "joi": "^14.0.2",
     "rimraf": "^2.6.2",
-    "tslint": "^5.9.1",
-    "typescript": "^2.8.3"
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.4"
   }
 }
