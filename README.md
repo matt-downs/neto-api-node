@@ -31,6 +31,10 @@ const mySite = new NetoAPI({
 });
 ```
 
+## Authentication
+
+This library doesn't handle any authentication logic, it assumes that you already have obtained an API key or OAuth secret by some other means. More information on how to retrieve credentials can be found by visiting [Neto's API documentation](https://developers.neto.com.au/documentation/engineers/api-documentation/getting-started/getting-started/)
+
 ## Basic syntax
 
 Once the library is initialised, you can use it like so:
