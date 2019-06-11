@@ -1,0 +1,1295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cart .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`cart .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`category .add() should generate the correct request 1`] = `
+Object {
+  "Category": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`category .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`category .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`category .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`category .update() should generate the correct request 1`] = `
+Object {
+  "Category": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`category .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`content .add() should generate the correct request 1`] = `
+Object {
+  "Content": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`content .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`content .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`content .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`content .update() should generate the correct request 1`] = `
+Object {
+  "Content": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`content .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`currency .getSettings() should generate the correct request 1`] = `Object {}`;
+
+exports[`currency .getSettings() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`currency .updateSettings() should generate the correct request 1`] = `
+Object {
+  "CurrencySettings": Object {
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`currency .updateSettings() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .add() should generate the correct request 1`] = `
+Object {
+  "Customer": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`customer .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .addLog() should generate the correct request 1`] = `
+Object {
+  "CustomerLogs": Object {
+    "CustomerLog": Array [
+      Object {
+        "genericKey": "genericValue",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .addLog() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`customer .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .update() should generate the correct request 1`] = `
+Object {
+  "Customer": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`customer .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .updateLog() should generate the correct request 1`] = `
+Object {
+  "CustomerLogs": Object {
+    "CustomerLog": Array [
+      Object {
+        "genericKey": "genericValue",
+      },
+    ],
+  },
+}
+`;
+
+exports[`customer .updateLog() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`item .add() should generate the correct request 1`] = `
+Object {
+  "Item": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`item .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`item .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`item .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`item .update() should generate the correct request 1`] = `
+Object {
+  "Item": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`item .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`order .add() should generate the correct request 1`] = `
+Object {
+  "Order": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`order .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`order .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`order .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`order .update() should generate the correct request 1`] = `
+Object {
+  "Order": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`order .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`payment .add() should generate the correct request 1`] = `
+Object {
+  "Payment": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`payment .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`payment .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`payment .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`payment .getMethods() should generate the correct request 1`] = `Object {}`;
+
+exports[`payment .getMethods() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`rma .add() should generate the correct request 1`] = `
+Object {
+  "Rma": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`rma .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`rma .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`rma .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`shipping .getMethods() should generate the correct request 1`] = `Object {}`;
+
+exports[`shipping .getMethods() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`shipping .getQuote() should generate the correct request 1`] = `
+Object {
+  "ShippingQuote": Object {
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`shipping .getQuote() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`supplier .add() should generate the correct request 1`] = `
+Object {
+  "Supplier": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`supplier .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`supplier .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`supplier .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`supplier .update() should generate the correct request 1`] = `
+Object {
+  "Supplier": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`supplier .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`voucher .add() should generate the correct request 1`] = `
+Object {
+  "Voucher": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`voucher .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`voucher .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`voucher .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`voucher .update() should generate the correct request 1`] = `
+Object {
+  "Voucher": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`voucher .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`warehouse .add() should generate the correct request 1`] = `
+Object {
+  "Warehouse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`warehouse .add() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`warehouse .get() should generate the correct request 1`] = `
+Object {
+  "Filter": Object {
+    "OutputSelector": Array [
+      "outputSelectorField1",
+      "outputSelectorField1",
+    ],
+    "genericKey": "genericValue",
+  },
+}
+`;
+
+exports[`warehouse .get() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
+
+exports[`warehouse .update() should generate the correct request 1`] = `
+Object {
+  "Warehouse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+}
+`;
+
+exports[`warehouse .update() should return the response 1`] = `
+Object {
+  "Ack": "Success",
+  "GenericResponse": Array [
+    Object {
+      "genericKey": "genericValue",
+    },
+  ],
+  "Messages": Object {
+    "Error": Array [
+      Object {
+        "Description": "String",
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+    "Warning": Array [
+      Object {
+        "Message": "String",
+        "SeverityCode": "String",
+      },
+    ],
+  },
+}
+`;
