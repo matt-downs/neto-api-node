@@ -38,7 +38,7 @@ export function init(config: InitOptions) {
     requestOptions.headers!.X_ACCESS_KEY = config.oauth_clientId;
   }
   if (config.oauth_secret) {
-    requestOptions.headers!.X_SECRET_KEY = config.oauth_clientId;
+    requestOptions.headers!.X_SECRET_KEY = config.oauth_secret;
   }
   if (config.user) {
     requestOptions.headers!.NETOAPI_USERNAME = config.user;
