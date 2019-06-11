@@ -6,8 +6,10 @@ export interface ExecOptions {
 
 export interface InitOptions {
   url: string;
-  key: string;
+  key?: string;
   user?: string;
+  oauth_clientId?: string;
+  oauth_secret?: string;
 }
 
 let requestOptions: (UriOptions & CoreOptions) | (UrlOptions & CoreOptions);
@@ -16,20 +18,28 @@ export function init(config: InitOptions) {
   if (!config.url) {
     throw new Error("url must be specified");
   }
-  if (!config.key) {
-    throw new Error("key must be specified");
+  if (!config.key && !(config.oauth_clientId && config.oauth_secret)) {
+    throw new Error("key or oauth_clientId + oauth_secret must be specified");
   }
 
   requestOptions = {
     headers: {
-      Accept: "application/json",
-      NETOAPI_KEY: config.key
+      Accept: "application/json"
     },
     json: true,
     strictSSL: true,
     url: config.url + "/do/WS/NetoAPI"
   };
 
+  if (config.key) {
+    requestOptions.headers!.NETOAPI_KEY = config.key;
+  }
+  if (config.oauth_clientId) {
+    requestOptions.headers!.X_ACCESS_KEY = config.oauth_clientId;
+  }
+  if (config.oauth_secret) {
+    requestOptions.headers!.X_SECRET_KEY = config.oauth_secret;
+  }
   if (config.user) {
     requestOptions.headers!.NETOAPI_USERNAME = config.user;
   }
