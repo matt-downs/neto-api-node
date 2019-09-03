@@ -1,0 +1,39 @@
+{
+  "apiConfig": {
+    "url": "https://someurl.com",
+    "key": "somekey",
+    "user": "someuser"
+  },
+
+  "nockConfig": {
+    "headers": {
+      "Accept": "application/json",
+      "NETOAPI_KEY": "somekey",
+      "NETOAPI_USERNAME": "someuser"
+    }
+  },
+
+  "genericApiResponse": {
+    "GenericResponse": [
+      {
+        "genericKey": "genericValue"
+      }
+    ],
+    "Ack": "Success",
+    "Messages": {
+      "Error": [
+        {
+          "Message": "String",
+          "SeverityCode": "String",
+          "Description": "String"
+        }
+      ],
+      "Warning": [
+        {
+          "Message": "String",
+          "SeverityCode": "String"
+        }
+      ]
+    }
+  }
+}
